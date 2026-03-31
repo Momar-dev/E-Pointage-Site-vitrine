@@ -1889,6 +1889,15 @@
       margin-top: 3.5rem;
     }
 
+    /* Grille 2×2 pour les screenshots Web (plus lisibles) */
+    .showcase-grid-web {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+      margin-bottom: 4rem;
+    }
+
     .app-screen {
       border-radius: 20px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
@@ -1907,6 +1916,24 @@
       height: auto;
       display: block;
     }
+
+    /* Images web : hauteur fixe + couverture pour bien voir le contenu */
+    .app-screen-web img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    @media (max-width: 767px) {
+      .showcase-grid-web {
+        grid-template-columns: 1fr;
+      }
+      .app-screen-web img {
+        height: 240px;
+      }
+    }
   </style>
 </head>
 
@@ -1916,7 +1943,7 @@
   <nav id="navbar">
     <a class="nav-brand" href="#">
       <img src="assets/logo.png" alt="E-Pointage Logo" class="nav-logo">
-      <span>E-Pointage</span>
+      <span style="color: var(--primary);">E-Pointage</span>
     </a>
     <ul class="nav-links">
       <li><a href="#features">Fonctionnalités</a></li>
@@ -2146,7 +2173,7 @@
             <span class="tag">Node.js</span>
             <span class="tag">Express</span>
             <span class="tag">SQLite</span>
-            <span class="tag">HTML · CSS · JS</span>
+            <span class="tag">Tailwind CSS · JS</span>
           </div>
         </div>
         <div class="platform-card platform-mobile reveal">
@@ -2156,7 +2183,7 @@
           <div class="platform-tags">
             <span class="tag">React Native</span>
             <span class="tag">Expo</span>
-            <span class="tag">Firebase</span>
+            <span class="tag">API REST</span>
             <span class="tag">Android · iOS</span>
           </div>
         </div>
@@ -2167,11 +2194,27 @@
   <!-- APP SHOWCASE -->
   <section id="app-showcase" class="showcase-bg">
     <div class="container">
+
+      <!-- Web Showcase -->
       <div class="text-center reveal">
-        <span class="section-badge"><i class="fas fa-mobile-screen-button"></i> Interfaces App</span>
-        <h2 class="section-title">L'application entre vos mains</h2>
-        <p class="section-sub mx-auto">Découvrez l'expérience fluide et intuitive de l'application mobile conçue pour
-          les étudiants.</p>
+        <span class="section-badge"><i class="fas fa-desktop"></i> Espace Web Admin & Prof</span>
+        <h2 class="section-title">Le centre de contrôle</h2>
+        <p class="section-sub mx-auto">Gérez facilement vos filières, vos professeurs et lancez l'appel depuis des
+          tableaux de bord ergonomiques.</p>
+      </div>
+      <div class="showcase-grid-web">
+        <div class="app-screen app-screen-web reveal"><img src="assets/Porte d'entrée.png" alt="Portail de connexion Web E-Pointage"></div>
+        <div class="app-screen app-screen-web reveal"><img src="assets/Dashbord.png" alt="Dashboard Administrateur E-Pointage"></div>
+        <div class="app-screen app-screen-web reveal"><img src="assets/Dashbord professeur.png" alt="Dashboard Professeur E-Pointage"></div>
+        <div class="app-screen app-screen-web reveal"><img src="assets/Dashbord Prof-1.png" alt="Tableau de bord de suivi de session"></div>
+      </div>
+
+      <!-- Mobile Showcase -->
+      <div class="text-center reveal">
+        <span class="section-badge"><i class="fas fa-mobile-screen-button"></i> Application Mobile Étudiant</span>
+        <h2 class="section-title">La présence entre leurs mains</h2>
+        <p class="section-sub mx-auto">L'expérience de scan hors-ligne fluide et intuitive conçue exclusivement pour vos
+          étudiants.</p>
       </div>
       <div class="showcase-grid">
         <div class="app-screen reveal"><img src="assets/Interface Accueil.PNG" alt="Interface Accueil - E-Pointage">
@@ -2181,6 +2224,7 @@
         <div class="app-screen reveal"><img src="assets/Interface Profil.PNG" alt="Interface Profil étudiant"></div>
         <div class="app-screen reveal"><img src="assets/Interface Centre Aide.PNG" alt="Interface Centre Aide"></div>
       </div>
+
     </div>
   </section>
 
@@ -2206,24 +2250,24 @@
           <span>React Native</span>
         </div>
         <div class="tech-item reveal">
-          <i class="fas fa-fire"></i>
-          <span>Firebase</span>
+          <i class="fas fa-server"></i>
+          <span>Express.js</span>
         </div>
         <div class="tech-item reveal">
           <i class="fas fa-qrcode"></i>
           <span>QR Engine</span>
         </div>
         <div class="tech-item reveal">
-          <i class="fas fa-lock"></i>
-          <span>JWT Auth</span>
+          <i class="fas fa-shield-alt"></i>
+          <span>BCrypt Security</span>
         </div>
         <div class="tech-item reveal">
-          <i class="fas fa-file-pdf"></i>
-          <span>PDF Export</span>
+          <i class="fas fa-palette"></i>
+          <span>Tailwind CSS</span>
         </div>
         <div class="tech-item reveal">
-          <i class="fab fa-android"></i>
-          <span>Android</span>
+          <i class="fas fa-layer-group"></i>
+          <span>Expo</span>
         </div>
       </div>
     </div>
@@ -2240,12 +2284,7 @@
           besoins. Tous les plans incluent l'onboarding et le support.</p>
       </div>
 
-      <div class="pricing-toggle-wrap reveal">
-        <button class="pricing-toggle-btn active">Mensuel</button>
-        <button class="pricing-toggle-btn">Annuel <span class="pricing-toggle-discount">-20%</span></button>
-      </div>
-
-      <div class="pricing-plans-grid">
+      <div class="pricing-plans-grid" style="margin-top: 4rem;">
         <!-- Starter Section -->
         <div class="plan-card reveal">
           <div class="plan-name">STARTER</div>
@@ -2258,10 +2297,10 @@
           <ul class="plan-features">
             <li><i class="fas fa-check-circle"></i> Jusqu'à 500 étudiants actifs</li>
             <li><i class="fas fa-check-circle"></i> Scan QR Code en temps réel</li>
-            <li><i class="fas fa-check-circle"></i> Tableaux de bord de base</li>
-            <li><i class="fas fa-check-circle"></i> Gestion des membres</li>
-            <li class="off"><i class="fas fa-times-circle"></i> Rapports avancés (PDF/CSV)</li>
-            <li class="off"><i class="fas fa-times-circle"></i> Mode hors-ligne illimité</li>
+            <li><i class="fas fa-check-circle"></i> Tableaux de bord admin & profs</li>
+            <li><i class="fas fa-check-circle"></i> App mobile pour les étudiants</li>
+            <li class="off"><i class="fas fa-times-circle"></i> Importation de listes en masse (CSV)</li>
+            <li class="off"><i class="fas fa-times-circle"></i> Mode hors-ligne étendu</li>
           </ul>
           <a href="#contact" class="btn-plan">Démarrer gratuitement</a>
         </div>
@@ -2274,15 +2313,15 @@
           <div class="plan-price-box">
             <span class="plan-price-currency">XOF</span>
             <span class="plan-price-value">250</span>
-            <span class="plan-price-period">par élève / mois &bull; jusqu'à 1000 élèves</span>
+            <span class="plan-price-period">par élève / mois &bull; 501 à 1000 élèves</span>
           </div>
           <ul class="plan-features">
             <li><i class="fas fa-check-circle"></i> Jusqu'à 1000 étudiants actifs</li>
             <li><i class="fas fa-check-circle"></i> Tout le plan Starter</li>
-            <li><i class="fas fa-check-circle"></i> Rapports illimités (PDF/CSV)</li>
-            <li><i class="fas fa-check-circle"></i> Analyse et stats avancées</li>
-            <li><i class="fas fa-check-circle"></i> Mode hors-ligne complet</li>
-            <li><i class="fas fa-check-circle"></i> Support prioritaire 48h</li>
+            <li><i class="fas fa-check-circle"></i> Importation et export de listes (CSV)</li>
+            <li><i class="fas fa-check-circle"></i> Mode hors-ligne pour la prise d'appel</li>
+            <li><i class="fas fa-check-circle"></i> Historique illimité des sessions</li>
+            <li><i class="fas fa-check-circle"></i> Support prioritaire par email</li>
           </ul>
           <a href="#contact" class="btn-plan">Démarrer l'essai 14 jours</a>
         </div>
@@ -2299,10 +2338,10 @@
           <ul class="plan-features">
             <li><i class="fas fa-check-circle"></i> Étudiants illimités</li>
             <li><i class="fas fa-check-circle"></i> Tout le plan Pro</li>
-            <li><i class="fas fa-check-circle"></i> SSO / LDAP & Active Directory</li>
-            <li><i class="fas fa-check-circle"></i> Personnalisation d'interface</li>
-            <li><i class="fas fa-check-circle"></i> SLA 99,9% garanti</li>
-            <li><i class="fas fa-check-circle"></i> Customer Success Manager</li>
+            <li><i class="fas fa-check-circle"></i> Hébergement dédié et indépendant</li>
+            <li><i class="fas fa-check-circle"></i> Sauvegardes automatisées de la base</li>
+            <li><i class="fas fa-check-circle"></i> Personnalisation de l'interface</li>
+            <li><i class="fas fa-check-circle"></i> Accompagnement technique & formation</li>
           </ul>
           <a href="#contact" class="btn-plan">Contacter l'équipe</a>
         </div>
@@ -2392,44 +2431,61 @@
             <div class="contact-method-icon"><i class="fas fa-phone-alt"></i></div>
             <div>
               <h4>Téléphone</h4>
-              <p>+221 77 XXX XX XX</p>
+              <p>+221 77 566 71 95</p>
             </div>
           </div>
           <div class="contact-method">
             <div class="contact-method-icon"><i class="fas fa-envelope"></i></div>
             <div>
               <h4>Email</h4>
-              <p>contact@e-pointage.sn</p>
+              <p>e-pointage@gmail.com</p>
             </div>
           </div>
           <div class="contact-method">
             <div class="contact-method-icon"><i class="fas fa-map-marker-alt"></i></div>
             <div>
               <h4>Bureaux</h4>
-              <p>Dakar, Sénégal</p>
+              <p>Thiès, Sénégal</p>
             </div>
           </div>
         </div>
 
-        <form class="contact-form reveal"
-          onsubmit="event.preventDefault(); alert('Message envoyé ! Nous vous contacterons bientôt.');">
+        <form class="contact-form reveal" name="contact" method="POST" data-netlify="true"
+          data-netlify-honeypot="bot-field" id="contactForm">
+
+          <!-- Champ caché anti-spam Netlify -->
+          <input type="hidden" name="form-name" value="contact">
+          <p style="display:none;">
+            <label>Ne pas remplir : <input name="bot-field"></label>
+          </p>
+
+          <!-- Message de succès (caché par défaut) -->
+          <div id="form-success"
+            style="display:none; background:#d1fae5; border:1px solid #10b981; border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:1.5rem; color:#065f46; font-weight:600; font-size:0.95rem;">
+            <i class="fas fa-check-circle" style="margin-right:0.5rem;"></i>
+            Message envoyé avec succès ! Nous vous contacterons bientôt.
+          </div>
+
           <div class="form-group">
-            <label>Nom complet</label>
-            <input type="text" class="form-input" placeholder="Ex: Momar Dev" required>
+            <label for="contact-nom">Nom complet</label>
+            <input id="contact-nom" type="text" name="nom" class="form-input" placeholder="Nom complet" required>
           </div>
           <div class="form-group">
-            <label>Email professionnel</label>
-            <input type="email" class="form-input" placeholder="nom@ecole.sn" required>
+            <label for="contact-email">Email professionnel</label>
+            <input id="contact-email" type="email" name="email" class="form-input" placeholder="nom@ecole.sn" required>
           </div>
           <div class="form-group">
-            <label>Établissement</label>
-            <input type="text" class="form-input" placeholder="Nom de votre école" required>
+            <label for="contact-etablissement">Établissement</label>
+            <input id="contact-etablissement" type="text" name="etablissement" class="form-input"
+              placeholder="Nom de votre école" required>
           </div>
           <div class="form-group">
-            <label>Message</label>
-            <textarea class="form-input" rows="4" placeholder="Comment pouvons-nous vous aider ?" required></textarea>
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" class="form-input" rows="4"
+              placeholder="Comment pouvons-nous vous aider ?" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+          <button type="submit" id="contact-submit" class="btn btn-primary"
+            style="width: 100%; justify-content: center;">
             <i class="fas fa-paper-plane"></i> Envoyer le message
           </button>
         </form>
@@ -2470,7 +2526,6 @@
       <div class="footer-bottom">
         <span>© 2026 E-Pointage — Tous droits réservés</span>
         <div class="badge-made">
-          <i class="fas fa-heart" style="color: #f43f5e; font-size: 0.8rem;"></i>
           Fait avec passion pour l'éducation
         </div>
       </div>
@@ -2538,6 +2593,55 @@
         });
       });
     });
+
+    // ── Netlify Form : soumission AJAX ──
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('form-success');
+    const submitBtn  = document.getElementById('contact-submit');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // État chargement
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours…';
+
+        const formData = new FormData(contactForm);
+
+        try {
+          const response = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString(),
+          });
+
+          if (response.ok) {
+            // Succès
+            formSuccess.style.display = 'block';
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            contactForm.reset();
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Message envoyé !';
+            submitBtn.style.background = 'var(--success)';
+            setTimeout(() => {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer le message';
+              submitBtn.style.background = '';
+            }, 5000);
+          } else {
+            throw new Error('Réponse serveur inattendue');
+          }
+        } catch (err) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Erreur, réessayez';
+          submitBtn.style.background = '#ef4444';
+          setTimeout(() => {
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer le message';
+            submitBtn.style.background = '';
+          }, 4000);
+        }
+      });
+    }
   </script>
 </body>
 
