@@ -2610,30 +2610,30 @@
         const formData = new FormData(contactForm);
 
         try {
-          const response = await fetch('/', {
+          // Netlify renvoie un redirect (302) → on ne vérifie pas response.ok
+          // Le simple fait que fetch() se résolve sans throw = succès
+          await fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams(formData).toString(),
           });
 
-          if (response.ok) {
-            // Succès
-            formSuccess.style.display = 'block';
-            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            contactForm.reset();
-            submitBtn.innerHTML = '<i class="fas fa-check"></i> Message envoyé !';
-            submitBtn.style.background = 'var(--success)';
-            setTimeout(() => {
-              submitBtn.disabled = false;
-              submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer le message';
-              submitBtn.style.background = '';
-            }, 5000);
-          } else {
-            throw new Error('Réponse serveur inattendue');
-          }
+          // Succès
+          formSuccess.style.display = 'block';
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          contactForm.reset();
+          submitBtn.innerHTML = '<i class="fas fa-check"></i> Message envoyé !';
+          submitBtn.style.background = 'var(--success)';
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer le message';
+            submitBtn.style.background = '';
+          }, 5000);
+
         } catch (err) {
+          // Erreur réseau réelle (pas de connexion, etc.)
           submitBtn.disabled = false;
-          submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Erreur, réessayez';
+          submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Erreur réseau, réessayez';
           submitBtn.style.background = '#ef4444';
           setTimeout(() => {
             submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer le message';
