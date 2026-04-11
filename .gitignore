@@ -1,0 +1,20 @@
+# APK files - too large for Git (limit 100MB)
+downloads/*.apk
+
+# Logs
+*.log
+
+# Dependencies
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Environment
+.env
+.env.local
