@@ -1,5 +1,5 @@
-# APK files - too large for Git (limit 100MB)
-downloads/*.apk
+# APK files are now managed by Git LFS
+# downloads/*.apk
 
 # Logs
 *.log
