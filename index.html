@@ -1749,7 +1749,7 @@
 
       /* Logo nav : réduit sur mobile */
       .nav-logo {
-        height: 50px;
+        height: 40px;
       }
 
       .nav-dot-icon {
@@ -1763,7 +1763,7 @@
       }
 
       .hero {
-        padding: 5rem 1rem 3rem;
+        padding: 7.5rem 1rem 3rem;
       }
 
       /* Logo hero : réduit sur mobile */
@@ -1974,6 +1974,94 @@
       }
       .app-screen-web img {
         height: 240px;
+      }
+    }
+
+    /* ───── REVIEWS SECTION ───── */
+    .reviews-bg {
+      background: var(--white);
+      padding-bottom: 8rem;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .review-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 2.5rem;
+      position: relative;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .review-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+      border-color: var(--primary);
+    }
+
+    .review-stars {
+      color: var(--accent);
+      font-size: 0.9rem;
+      display: flex;
+      gap: 0.3rem;
+    }
+
+    .review-text {
+      font-size: 1rem;
+      color: var(--dark-2);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: auto;
+    }
+
+    .author-img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 1.2rem;
+      border: 2px solid white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .author-info h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--dark);
+    }
+
+    .author-info span {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    @media (max-width: 767px) {
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+      .review-card {
+        padding: 1.8rem;
       }
     }
   </style>
@@ -2240,7 +2328,7 @@
       <!-- Web Showcase -->
       <div class="text-center reveal">
         <span class="section-badge"><i class="fas fa-desktop"></i> Espace Web Admin & Prof</span>
-        <h2 class="section-title">Le centre de contrôle</h2>
+        <h2 class="section-title">Le Dashboard</h2>
         <p class="section-sub mx-auto">Gérez facilement vos filières, vos professeurs et lancez l'appel depuis des
           tableaux de bord ergonomiques.</p>
       </div>
@@ -2267,6 +2355,58 @@
         <div class="app-screen reveal"><img src="assets/Interface Centre Aide.PNG" alt="Interface Centre Aide"></div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="reviews-bg">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-badge"><i class="fas fa-comments"></i> Avis des utilisateurs</span>
+        <h2 class="section-title">Ce que disent nos utilisateurs</h2>
+        <p class="section-sub mx-auto">Découvrez pourquoi les établissements sénégalais font confiance à E-Pointage pour leur gestion au quotidien.</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card reveal">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="review-text">"E-Pointage a transformé la gestion des absences dans notre établissement. Le scan QR est ultra-rapide et les rapports PDF nous font gagner un temps précieux chaque semaine."</p>
+          <div class="review-author">
+            <div class="author-img">MF</div>
+            <div class="author-info">
+              <h4>Moussa Fall</h4>
+              <span>Directeur de Lycée – Dakar</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="review-text">"Mes étudiants adorent l'application ! Ils n'ont plus besoin d'attendre l'appel manuel, ils scannent et on commence le cours immédiatement. C'est l'innovation qu'il nous fallait."</p>
+          <div class="review-author">
+            <div class="author-img">FD</div>
+            <div class="author-info">
+              <h4>Fatou Diop</h4>
+              <span>Professeur de Mathématiques – Thiès</span>
+            </div>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+          <p class="review-text">"Le scan QR est incroyablement rapide. Mes étudiants prennent leur présence en quelques secondes, ce qui me laisse plus de temps pour commencer le cours. Fini les appels manuels qui perdent 10 minutes."</p>
+          <div class="review-author">
+            <div class="author-img">ID</div>
+            <div class="author-info">
+              <h4>Ibrahima Diallo</h4>
+              <span>Professeur d'Informatique – Dakar</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2541,8 +2681,11 @@
       <h2>Prêt à moderniser votre institution ?</h2>
       <p>Rejoignez E-Pointage et transformez la gestion de présence en quelques minutes.</p>
       <div class="cta-actions">
-        <a href="#" class="btn btn-ghost dev-tooltip" data-tooltip="App en développement">
-          <i class="fab fa-google-play"></i> Télécharger l'app
+        <a href="downloads/android-epointage.apk" class="btn btn-white" download>
+          <i class="fab fa-android"></i> Télécharger pour Android (APK)
+        </a>
+        <a href="install-ios.html" class="btn btn-ghost">
+          <i class="fab fa-apple"></i> Installer pour iOS (PWA)
         </a>
       </div>
     </div>
