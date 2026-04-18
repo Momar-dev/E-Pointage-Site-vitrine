@@ -2079,6 +2079,7 @@
       <li><a href="#features">Fonctionnalités</a></li>
       <li><a href="#how">Fonctionnement</a></li>
       <li><a href="#roles">Rôles</a></li>
+      <li><a href="#installation">Déploiement</a></li>
       <li><a href="#pricing">Tarification</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -2093,6 +2094,7 @@
     <a href="#features" class="mob-link">Fonctionnalités</a>
     <a href="#how" class="mob-link">Fonctionnement</a>
     <a href="#roles" class="mob-link">Rôles</a>
+    <a href="#installation" class="mob-link">Déploiement</a>
     <a href="#pricing" class="mob-link">Tarification</a>
     <a href="#faq" class="mob-link">FAQ</a>
     <a href="#contact" class="mob-link">Contact</a>
@@ -2124,6 +2126,14 @@
         </a>
         <a href="#platforms" class="btn btn-outline">
           <i class="fas fa-th-large"></i> Voir les plateformes
+        </a>
+      </div>
+      <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;" class="reveal">
+        <a href="app-mobile/E-Pointage.apk" download class="btn" style="background: #10b981; color: white; border: none; padding: 0.6rem 1.2rem; font-size: 0.85rem;">
+          <i class="fab fa-android"></i> App Android (.apk)
+        </a>
+        <a href="app-mobile/index.html" class="btn" style="background: #0f172a; color: white; border: none; padding: 0.6rem 1.2rem; font-size: 0.85rem;" onclick="alert('iOS / iPhone : Cliquez sur Partager (en bas de l\'écran) puis sur \'Sur l\'écran d\'accueil\' pour installer l\'application !');">
+          <i class="fab fa-apple"></i> Web App iOS
         </a>
       </div>
       <div class="stats-strip">
@@ -2280,6 +2290,44 @@
             <li><i class="fas fa-check-circle"></i> Disponible Android & iOS</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTALLATION & DEPLOYMENT -->
+  <section id="installation" style="background: var(--primary-light); padding: 5rem 0;">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-badge" style="background: white; color: var(--primary);"><i class="fas fa-server"></i> Déploiement Local</span>
+        <h2 class="section-title">Déploiement 100% "Plug & Play"</h2>
+        <p class="section-sub mx-auto">Pensé pour les écoles de toute taille. E-Pointage fonctionne de manière autonome sur votre réseau local sans dépendre de l'Internet mondial.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+        
+        <div style="background: white; padding: 2.5rem; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left; position: relative; overflow: hidden;" class="reveal">
+          <div style="width: 50px; height: 50px; background: var(--primary-light); color: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
+            <i class="fas fa-wifi"></i>
+          </div>
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--dark); margin-bottom: 1rem;">1. Réseau Intranet</h3>
+          <p style="color: var(--muted); line-height: 1.6; margin-bottom: 1rem;">Le serveur s'installe sur un ordinateur basique de votre établissement. Seule la connexion au routeur <strong>Wi-Fi local</strong> est requise. Vos données ne quittent pas votre école.</p>
+        </div>
+
+        <div style="background: white; padding: 2.5rem; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left; position: relative; overflow: hidden;" class="reveal">
+          <div style="width: 50px; height: 50px; background: #e0e7ff; color: #4f46e5; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
+            <i class="fas fa-link"></i>
+          </div>
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--dark); margin-bottom: 1rem;">2. Accès simplifié (mDNS)</h3>
+          <p style="color: var(--muted); line-height: 1.6; margin-bottom: 1rem;">Fini les adresses IP complexes ! Définissez le nom de votre établissement en 1 clic. Le portail sera accessible pour tous vos professeurs à une adresse magique comme <strong>http://ism-epointage.local</strong>.</p>
+        </div>
+
+        <div style="background: white; padding: 2.5rem; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left; position: relative; overflow: hidden;" class="reveal">
+          <div style="width: 50px; height: 50px; background: #ecfdf5; color: #10b981; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--dark); margin-bottom: 1rem;">3. Configuration Mobile</h3>
+          <p style="color: var(--muted); line-height: 1.6; margin-bottom: 1rem;">Les étudiants scannent une seule fois le "QR de Configuration" affiché au secrétariat. Leur téléphone se verrouille sur le serveur de l'école pour empêcher toute fraude extraterritoriale.</p>
+        </div>
+
       </div>
     </div>
   </section>

@@ -2,215 +2,43 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>E-Pointage</title>
-  <link rel="icon" type="image/png" href="assets/logo.png">
-  <link rel="apple-touch-icon" href="assets/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comment installer E-Pointage sur iPhone</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background: linear-gradient(135deg, #2596be 0%, #1e7a9e 100%);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      color: white;
-    }
-    
-    .container {
-      max-width: 400px;
-      width: 100%;
-      text-align: center;
-    }
-    
-    .logo {
-      width: 100px;
-      height: 100px;
-      background: white;
-      border-radius: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.5rem;
-      font-size: 40px;
-      font-weight: bold;
-      color: #2596be;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-    }
-    
-    h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    
-    .subtitle {
-      font-size: 1rem;
-      opacity: 0.9;
-      margin-bottom: 2rem;
-    }
-    
-    .install-box {
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-    
-    .btn-open {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      background: white;
-      color: #2596be;
-      padding: 1rem 2rem;
-      border-radius: 16px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.1rem;
-      width: 100%;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
-    }
-    
-    .btn-open:active {
-      transform: scale(0.98);
-    }
-    
-    .instructions {
-      text-align: left;
-      font-size: 0.95rem;
-    }
-    
-    .instructions h3 {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    
-    .step {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      background: rgba(255,255,255,0.1);
-      border-radius: 12px;
-    }
-    
-    .step-number {
-      width: 28px;
-      height: 28px;
-      background: white;
-      color: #2596be;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.9rem;
-      flex-shrink: 0;
-    }
-    
-    .step-text {
-      line-height: 1.5;
-    }
-    
-    .share-icon {
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      background: rgba(255,255,255,0.3);
-      border-radius: 6px;
-      vertical-align: middle;
-      margin: 0 2px;
-    }
-    
-    .back-link {
-      color: white;
-      text-decoration: none;
-      opacity: 0.8;
-      font-size: 0.9rem;
-      margin-top: 1rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    .back-link:hover {
-      opacity: 1;
-    }
-    
-    @media (max-width: 400px) {
-      h1 {
-        font-size: 1.5rem;
-      }
-      
-      .install-box {
-        padding: 1.5rem;
-      }
-    }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f172a; color: white; margin: 0; padding: 2rem; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+    .card { background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 24px; max-width: 500px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
+    h1 { margin-bottom: 1rem; color: #2596be; }
+    .step { background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 12px; margin-bottom: 1rem; text-align: left; display: flex; gap: 1rem; align-items: center; }
+    .step i { font-size: 1.5rem; color: #2596be; }
+    .btn-back { display: inline-block; margin-top: 2rem; color: white; text-decoration: none; border: 1px solid white; padding: 0.8rem 1.5rem; border-radius: 12px; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="assets/logo.png" alt="E-Pointage" style="width: 100px; height: 100px; margin-bottom: 1.5rem; border-radius: 20px;">
-    <h1>E-Pointage</h1>
-    <p class="subtitle">Application de gestion des présences</p>
+  <div class="card">
+    <i class="fab fa-apple" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+    <h1>Installation iPhone (iOS)</h1>
+    <p style="color: #94a3b8; margin-bottom: 2rem;">E-Pointage utilise le réseau local de votre établissement pour plus de sécurité. Il n'y a rien à télécharger ici !</p>
     
-    <div class="install-box">
-      <a href="/ios/" class="btn-open">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-        </svg>
-        Ouvrir l'application
-      </a>
-      
-      <div class="instructions">
-        <h3>📱 Comment installer sur iPhone</h3>
-        
-        <div class="step">
-          <div class="step-number">1</div>
-          <div class="step-text">Appuyez sur <strong>"Ouvrir l'application"</strong> ci-dessus</div>
-        </div>
-        
-        <div class="step">
-          <div class="step-number">2</div>
-          <div class="step-text">Dans Safari, appuyez sur le bouton <strong>Partager</strong> <span style="font-size: 1.2rem;">⎋</span> en bas</div>
-        </div>
-        
-        <div class="step">
-          <div class="step-number">3</div>
-          <div class="step-text">Sélectionnez <strong>"Sur l'écran d'accueil"</strong></div>
-        </div>
-        
-        <div class="step">
-          <div class="step-number">4</div>
-          <div class="step-text">Appuyez sur <strong>"Ajouter"</strong></div>
-        </div>
-      </div>
+    <div class="step">
+      <i class="fas fa-wifi"></i>
+      <div><strong>Étape 1</strong><br>Connectez-vous au WiFi de l'école.</div>
     </div>
-    
-    <a href="index.html" class="back-link">← Retour au site</a>
+    <div class="step">
+      <i class="fas fa-camera"></i>
+      <div><strong>Étape 2</strong><br>Ouvrez l'Appareil Photo et scannez le QR code du professeur.</div>
+    </div>
+    <div class="step">
+      <i class="fas fa-share-square"></i>
+      <div><strong>Étape 3</strong><br>Safari s'ouvre. Touchez l'icône "Partager".</div>
+    </div>
+    <div class="step">
+      <i class="fas fa-plus-square"></i>
+      <div><strong>Étape 4</strong><br>Touchez "Sur l'écran d'accueil".</div>
+    </div>
+
+    <a href="index.html" class="btn-back">Retour au site</a>
   </div>
-  
-  <script>
-    // Détecter si déjà installée
-    if (window.navigator.standalone === true) {
-      window.location.href = '/ios/';
-    }
-  </script>
 </body>
 </html>
