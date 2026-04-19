@@ -2,19 +2,19 @@
   "name": "E-Pointage",
   "short_name": "E-Pointage",
   "description": "Système de pointage électronique",
-  "start_url": "/app-mobile/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#2596be",
   "theme_color": "#2596be",
   "icons": [
     {
-      "src": "/app-mobile/icon.png",
+      "src": "./icon.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/app-mobile/icon.png",
+      "src": "./icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
