@@ -133,6 +133,26 @@
       background: rgba(255,255,255,0.08);
       border-color: rgba(255,255,255,0.4);
     }
+    
+    .btn-open {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      text-decoration: none;
+      background: linear-gradient(135deg, #2596be, #6366f1);
+      padding: 0.75rem 1.8rem;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 15px rgba(37,150,190,0.3);
+      transition: all 0.3s;
+    }
+    
+    .btn-open:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37,150,190,0.5);
+    }
   </style>
 </head>
 <body>
@@ -176,16 +196,19 @@
       </div>
     </div>
 
-    <hr class="divider">
-
     <div class="info-box">
       <i class="fas fa-check-circle"></i>
       <strong>C'est tout !</strong> L'icône E-Pointage apparaît sur ton écran d'accueil. Elle s'ouvre en plein écran, sans barre Safari, exactement comme une vraie application Apple !
     </div>
 
-    <a href="index.html" class="btn-back">
-      <i class="fas fa-arrow-left"></i> Retour au site
-    </a>
+    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
+      <a href="index.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Retour
+      </a>
+      <a href="app-mobile/index.html" class="btn-open">
+        Ouvrir l'application iOS <i class="fas fa-external-link-alt"></i>
+      </a>
+    </div>
   </div>
 </body>
 </html>
