@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Installer E-Pointage – Guide d'Installation PWA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/png" href="assets/logo.png">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background: #0f172a;
-      background-image: radial-gradient(at 20% 20%, rgba(37,150,190,0.15) 0, transparent 50%),
-                        radial-gradient(at 80% 80%, rgba(99,102,241,0.1) 0, transparent 50%);
+      background-image: radial-gradient(at 20% 20%, rgba(37, 150, 190, 0.15) 0, transparent 50%),
+        radial-gradient(at 80% 80%, rgba(99, 102, 241, 0.1) 0, transparent 50%);
       color: white;
       min-height: 100vh;
       display: flex;
@@ -20,30 +28,34 @@
       justify-content: center;
       padding: 2rem 1rem;
     }
+
     .card {
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
       backdrop-filter: blur(20px);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 3rem 2.5rem;
       border-radius: 28px;
       max-width: 520px;
       width: 100%;
       text-align: center;
     }
+
     .app-icon {
       width: 80px;
       height: 80px;
       margin: 0 auto 1.5rem;
       border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(37,150,190,0.3);
+      box-shadow: 0 10px 25px rgba(37, 150, 190, 0.3);
       display: block;
     }
+
     h1 {
       font-size: 1.8rem;
       font-weight: 800;
       color: white;
       margin-bottom: 0.5rem;
     }
+
     .subtitle {
       color: #94a3b8;
       font-size: 0.95rem;
@@ -52,8 +64,8 @@
     }
 
     .step {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       padding: 1.1rem 1.3rem;
       border-radius: 16px;
       margin-bottom: 1rem;
@@ -75,12 +87,14 @@
       font-weight: 800;
       font-size: 0.9rem;
     }
+
     .step-body strong {
       display: block;
       font-size: 0.95rem;
       margin-bottom: 0.2rem;
       color: white;
     }
+
     .step-body p {
       color: #94a3b8;
       font-size: 0.85rem;
@@ -100,17 +114,18 @@
       font-weight: 800;
       font-size: 1.05rem;
       margin: 2rem 0;
-      box-shadow: 0 10px 25px rgba(37,150,190,0.4);
+      box-shadow: 0 10px 25px rgba(37, 150, 190, 0.4);
       transition: all 0.3s;
     }
+
     .btn-main:hover {
       transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(37,150,190,0.5);
+      box-shadow: 0 15px 30px rgba(37, 150, 190, 0.5);
     }
 
     .info-box {
-      background: rgba(255,184,0,0.1);
-      border: 1px solid rgba(255,184,0,0.2);
+      background: rgba(255, 184, 0, 0.1);
+      border: 1px solid rgba(255, 184, 0, 0.2);
       border-radius: 14px;
       padding: 1rem;
       font-size: 0.8rem;
@@ -128,14 +143,20 @@
       font-weight: 600;
       transition: color 0.3s;
     }
-    .btn-back:hover { color: white; }
+
+    .btn-back:hover {
+      color: white;
+    }
   </style>
 </head>
+
 <body>
   <div class="card">
-    <img src="assets/logo.png" alt="E-Pointage" class="app-icon">
+    <img src="assets/logo.png" alt="E-Pointage"
+      style="width: 120px; height: 120px; margin: 0 auto 1.5rem; border-radius: 22px; display: block; filter: drop-shadow(0 10px 15px rgba(37,150,190,0.4));">
     <h1>E-Pointage Mobile</h1>
-    <p class="subtitle">Suivez les tapes ci-dessous pour installer l'application sur votre appareil iOS ou Android.</p>
+    <p class="subtitle">Suivez les <strong>étapes</strong> ci-dessous pour installer l'application sur votre appareil
+      iOS ou Android.</p>
 
     <a href="app-mobile/index.html" class="btn-main">
       1. Ouvrir l'Application <i class="fas fa-external-link-alt"></i>
@@ -145,7 +166,8 @@
       <div class="step-num">2</div>
       <div class="step-body">
         <strong>Appuyez sur "Partager"</strong>
-        <p>Une fois l'application ouverte, touchez l'icône de partage de votre navigateur (le carré avec une flèche vers le haut).</p>
+        <p>Une fois l'application ouverte, touchez l'icône de partage de votre navigateur (le carré avec une flèche vers
+          le haut).</p>
       </div>
     </div>
 
@@ -158,7 +180,8 @@
     </div>
 
     <div class="info-box">
-      <i class="fas fa-info-circle"></i> <strong>Note :</strong> Une fois installée, ouvrez l'icône sur votre écran d'accueil et saisissez votre <strong>Code École</strong> pour vous connecter.
+      <i class="fas fa-info-circle"></i> <strong>Note :</strong> Une fois installée, ouvrez l'icône sur votre écran
+      d'accueil et saisissez votre <strong>Code École</strong> pour vous connecter.
     </div>
 
     <a href="index.html" class="btn-back">
@@ -166,4 +189,5 @@
     </a>
   </div>
 </body>
+
 </html>
