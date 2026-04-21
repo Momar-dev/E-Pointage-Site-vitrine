@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Installer E-Pointage sur iPhone – Guide iOS</title>
+  <title>Installer E-Pointage – Guide d'Installation PWA</title>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
@@ -30,13 +30,13 @@
       width: 100%;
       text-align: center;
     }
-    .apple-icon {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
+    .app-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(37,150,190,0.3);
       display: block;
-      background: linear-gradient(135deg, #2596be, #6366f1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
     h1 {
       font-size: 1.8rem;
@@ -45,12 +45,11 @@
       margin-bottom: 0.5rem;
     }
     .subtitle {
-      color: #64748b;
-      font-size: 0.9rem;
+      color: #94a3b8;
+      font-size: 0.95rem;
       margin-bottom: 2.5rem;
       line-height: 1.6;
     }
-    .subtitle strong { color: #2596be; }
 
     .step {
       background: rgba(255,255,255,0.06);
@@ -62,21 +61,19 @@
       display: flex;
       gap: 1rem;
       align-items: flex-start;
-      transition: border-color 0.3s;
     }
-    .step:hover { border-color: rgba(37,150,190,0.4); }
 
     .step-num {
-      width: 36px;
-      height: 36px;
-      min-width: 36px;
-      background: linear-gradient(135deg, #2596be, #1e7a9e);
-      border-radius: 10px;
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      background: var(--primary, #2596be);
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 800;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
     .step-body strong {
       display: block;
@@ -89,126 +86,84 @@
       font-size: 0.85rem;
       line-height: 1.5;
     }
-    .step-body code {
-      background: rgba(37,150,190,0.2);
-      color: #2596be;
-      padding: 1px 6px;
-      border-radius: 5px;
-      font-size: 0.82rem;
-    }
 
-    .divider {
-      border: none;
-      border-top: 1px solid rgba(255,255,255,0.07);
+    .btn-main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #2596be, #6366f1);
+      color: white;
+      text-decoration: none;
+      padding: 1.1rem;
+      border-radius: 18px;
+      font-weight: 800;
+      font-size: 1.05rem;
       margin: 2rem 0;
+      box-shadow: 0 10px 25px rgba(37,150,190,0.4);
+      transition: all 0.3s;
+    }
+    .btn-main:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(37,150,190,0.5);
     }
 
     .info-box {
-      background: rgba(37,150,190,0.1);
-      border: 1px solid rgba(37,150,190,0.3);
+      background: rgba(255,184,0,0.1);
+      border: 1px solid rgba(255,184,0,0.2);
       border-radius: 14px;
-      padding: 1rem 1.2rem;
-      font-size: 0.83rem;
-      color: #93c5fd;
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: #fbbf24;
       text-align: left;
-      line-height: 1.6;
-      margin-bottom: 2rem;
+      margin-top: 1rem;
     }
-    .info-box i { color: #2596be; margin-right: 6px; }
 
     .btn-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: white;
+      display: inline-block;
+      margin-top: 1.5rem;
+      color: #64748b;
       text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 0.75rem 1.8rem;
-      border-radius: 14px;
+      font-size: 0.85rem;
       font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.3s;
+      transition: color 0.3s;
     }
-    .btn-back:hover {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.4);
-    }
-    
-    .btn-open {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: white;
-      text-decoration: none;
-      background: linear-gradient(135deg, #2596be, #6366f1);
-      padding: 0.75rem 1.8rem;
-      border-radius: 14px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      box-shadow: 0 4px 15px rgba(37,150,190,0.3);
-      transition: all 0.3s;
-    }
-    
-    .btn-open:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37,150,190,0.5);
-    }
+    .btn-back:hover { color: white; }
   </style>
 </head>
 <body>
   <div class="card">
-    <i class="fab fa-apple apple-icon"></i>
-    <h1>Installation sur iPhone</h1>
-    <p class="subtitle">
-      E-Pointage fonctionne sur iOS <strong>sans téléchargement</strong> depuis l'App Store.<br>
-      Suis ces 4 étapes simples pour l'installer comme une vraie application.
-    </p>
+    <img src="assets/logo.png" alt="E-Pointage" class="app-icon">
+    <h1>E-Pointage Mobile</h1>
+    <p class="subtitle">Suivez les tapes ci-dessous pour installer l'application sur votre appareil iOS ou Android.</p>
 
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <strong>Connecte-toi au Wi-Fi de l'école</strong>
-        <p>Ton iPhone doit être connecté au réseau Wi-Fi de l'établissement (le même que le serveur E-Pointage).</p>
-      </div>
-    </div>
+    <a href="app-mobile/index.html" class="btn-main">
+      1. Ouvrir l'Application <i class="fas fa-external-link-alt"></i>
+    </a>
 
     <div class="step">
       <div class="step-num">2</div>
       <div class="step-body">
-        <strong>Ouvre l'application et tape le nom de l'école</strong>
-        <p>Clique sur <code>Ouvrir l'application iOS</code> ci-dessous. Dans le champ affiché, tape le nom de domaine de ton école (exemple : <code>supdeco-epointage</code>) puis appuie sur <code>Se connecter</code>.</p>
+        <strong>Appuyez sur "Partager"</strong>
+        <p>Une fois l'application ouverte, touchez l'icône de partage de votre navigateur (le carré avec une flèche vers le haut).</p>
       </div>
     </div>
 
     <div class="step">
       <div class="step-num">3</div>
       <div class="step-body">
-        <strong>Touche l'icône "Partager" de Safari</strong>
-        <p>Une fois connecté, appuie sur le bouton <code>📤 Partager</code> en bas de l'écran Safari (carré avec une flèche vers le haut).</p>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="step-num">4</div>
-      <div class="step-body">
-        <strong>Appuie sur "Sur l'écran d'accueil"</strong>
-        <p>Dans le menu qui apparaît, fais défiler et appuie sur <code>Sur l'écran d'accueil [+]</code>. Confirme en appuyant sur "Ajouter".</p>
+        <strong>Ajoutez à l'écran d'accueil</strong>
+        <p>Faites défiler les options et choisissez <strong>"Sur l'écran d'accueil"</strong>. Confirmez l'ajout.</p>
       </div>
     </div>
 
     <div class="info-box">
-      <i class="fas fa-check-circle"></i>
-      <strong>C'est tout !</strong> L'icône E-Pointage apparaît sur ton écran d'accueil. Elle s'ouvre en plein écran, sans barre Safari, exactement comme une vraie application Apple !
+      <i class="fas fa-info-circle"></i> <strong>Note :</strong> Une fois installée, ouvrez l'icône sur votre écran d'accueil et saisissez votre <strong>Code École</strong> pour vous connecter.
     </div>
 
-    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1rem;">
-      <a href="index.html" class="btn-back">
-        <i class="fas fa-arrow-left"></i> Retour
-      </a>
-      <a href="app-mobile/index.html" class="btn-open">
-        Ouvrir l'application iOS <i class="fas fa-external-link-alt"></i>
-      </a>
-    </div>
+    <a href="index.html" class="btn-back">
+      <i class="fas fa-arrow-left"></i> Retour au site vitrine
+    </a>
   </div>
 </body>
 </html>
