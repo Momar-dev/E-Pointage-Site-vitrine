@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Déploiement Institutionnel - E-Pointage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; }
+        .gradient-text { background: linear-gradient(135deg, #2596be 0%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .feature-card { background: white; border-radius: 24px; padding: 2rem; border: 1px solid #e2e8f0; transition: all 0.3s; }
+        .feature-card:hover { transform: translateY(-5px); border-color: #2596be; }
+        .check-item { display: flex; gap: 12px; margin-bottom: 12px; font-size: 0.95rem; color: #475569; }
+        .check-item i { color: #2596be; margin-top: 4px; }
+    </style>
+</head>
+<body class="p-6 md:p-12">
+    <div class="max-w-5xl mx-auto">
+        <nav class="mb-12">
+            <a href="index.html" class="text-slate-500 hover:text-slate-900 font-bold transition-all flex items-center gap-2">
+                <i class="fas fa-arrow-left"></i> Retour au site
+            </a>
+        </nav>
+
+        <header class="mb-16 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
+                Guide Complet de <span class="gradient-text">Déploiement</span>
+            </h1>
+            <p class="text-xl text-slate-500 leading-relaxed max-w-3xl mx-auto">
+                Tout ce dont vous avez besoin pour mettre en place E-Pointage dans votre établissement, du matériel aux logiciels.
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <!-- Côté Établissement -->
+            <div class="feature-card shadow-sm border-t-4 border-t-blue-500">
+                <div class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h2 class="text-2xl font-bold mb-6 text-slate-900">Infrastructure Établissement</h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                            <i class="fas fa-desktop text-blue-500"></i> Matériel Requis
+                        </h3>
+                        <div class="check-item"><i class="fas fa-check-circle"></i> <span><strong>Serveur Local :</strong> Un PC/Mac (8Go RAM recommandé) pour héberger la base de données.</span></div>
+                        <div class="check-item"><i class="fas fa-check-circle"></i> <span><strong>Réseau Wi-Fi :</strong> Un routeur pour assurer la liaison entre les terminaux et le serveur.</span></div>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                            <i class="fas fa-code text-blue-500"></i> Logiciels & Config
+                        </h3>
+                        <div class="check-item"><i class="fas fa-check-circle"></i> <span><strong>Node.js :</strong> L'environnement d'exécution pour le moteur de pointage.</span></div>
+                        <div class="check-item"><i class="fas fa-check-circle"></i> <span><strong>Navigateur :</strong> Chrome, Safari ou Edge pour l'administration.</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Côté Étudiants -->
+            <div class="feature-card shadow-sm border-t-4 border-t-indigo-500">
+                <div class="w-16 h-16 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h2 class="text-2xl font-bold mb-6 text-slate-900">Pour les Étudiants</h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                            <i class="fas fa-mobile-alt text-indigo-500"></i> Terminaux
+                        </h3>
+                        <div class="check-item"><i class="fas fa-check-circle"></i> <span><strong>Smartphone :</strong> Compatible avec Android (APK) et iOS (iPhone via PWA).</span></div>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                            <i class="fas fa-download text-indigo-500"></i> Installation
+                        </h3>
+                        <div class="check-item"><i class="fas fa-check-circle"></i> <span><strong>Android :</strong> Téléchargement direct de l'APK depuis ce site.</span></div>
+                        <div class="check-item"><i class="fas fa-check-circle"></i> <span><strong>iOS :</strong> Ajout à l'écran d'accueil Safari (sans installation App Store).</span></div>
+                    </div>
+                    
+                    <div class="bg-indigo-50 p-4 rounded-xl">
+                        <p class="text-sm text-indigo-700 leading-relaxed">
+                            <i class="fas fa-info-circle mr-1"></i> <strong>Note :</strong> Les étudiants reçoivent un <strong>Code Établissement</strong> unique pour s'enregistrer lors de la première utilisation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Données -->
+        <section class="bg-white border border-slate-200 rounded-[40px] p-8 md:p-12 mb-16 shadow-sm">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-extrabold mb-6 text-slate-900">Importation simplifiée</h2>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Inutile de saisir les élèves un par un. Préparez simplement un fichier <strong>CSV ou Excel</strong> avec les informations de vos classes, et importez-les instantanément dans le portail d'administration.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="bg-slate-100 px-4 py-2 rounded-lg text-sm font-bold text-slate-600">Noms & Prénoms</span>
+                        <span class="bg-slate-100 px-4 py-2 rounded-lg text-sm font-bold text-slate-600">Matricules</span>
+                        <span class="bg-slate-100 px-4 py-2 rounded-lg text-sm font-bold text-slate-600">Filières</span>
+                    </div>
+                </div>
+                <div class="md:w-1/2 bg-slate-50 p-8 rounded-[32px] border border-slate-100">
+                    <i class="fas fa-file-csv text-5xl text-blue-500 mb-4"></i>
+                    <h4 class="text-xl font-bold mb-2">Prêt en 5 minutes</h4>
+                    <p class="text-slate-500 text-sm">Le système génère automatiquement les identifiants pour chaque étudiant dès l'importation.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center py-12 border-t border-slate-200">
+            <p class="text-slate-400 font-bold">&copy; 2026 E-Pointage - Solution de Présence Intelligente</p>
+        </footer>
+    </div>
+</body>
+</html>

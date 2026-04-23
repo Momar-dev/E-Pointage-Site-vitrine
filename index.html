@@ -65,7 +65,8 @@
       backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.35);
       border-radius: 24px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* Ombre douce premium */
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      /* Ombre douce premium */
       transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -98,7 +99,8 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 0.5rem; /* Ajusté pour l'effet de pilule */
+      gap: 0.5rem;
+      /* Ajusté pour l'effet de pilule */
       list-style: none;
     }
 
@@ -115,7 +117,8 @@
 
     .nav-links a:hover {
       color: var(--primary);
-      background: rgba(37, 150, 190, 0.08); /* Effet pilule légère */
+      background: rgba(37, 150, 190, 0.08);
+      /* Effet pilule légère */
     }
 
     /* État actif discret */
@@ -675,8 +678,13 @@
       color: var(--primary);
     }
 
-    .tech-item.firebase i { color: #FFCA28; }
-    .tech-item.sse i { color: #10b981; }
+    .tech-item.firebase i {
+      color: #FFCA28;
+    }
+
+    .tech-item.sse i {
+      color: #10b981;
+    }
 
     .tech-item span {
       font-size: 0.8rem;
@@ -1457,7 +1465,8 @@
       align-items: center;
       justify-content: center;
       gap: 2rem;
-      padding-top: 5rem; /* évite le chevauchement avec la nav */
+      padding-top: 5rem;
+      /* évite le chevauchement avec la nav */
     }
 
     .mobile-menu.open {
@@ -1772,7 +1781,7 @@
       }
 
       /* Logo hero : réduit sur mobile */
-      .hero-content > img {
+      .hero-content>img {
         height: 110px !important;
         margin-bottom: 1.2rem !important;
       }
@@ -1977,6 +1986,7 @@
       .showcase-grid-web {
         grid-template-columns: 1fr;
       }
+
       .app-screen-web img {
         height: 240px;
       }
@@ -2046,7 +2056,7 @@
       color: var(--primary);
       font-size: 1.2rem;
       border: 2px solid white;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     .author-info h4 {
@@ -2065,6 +2075,7 @@
       .reviews-grid {
         grid-template-columns: 1fr;
       }
+
       .review-card {
         padding: 1.8rem;
       }
@@ -2179,7 +2190,8 @@
         <div class="feature-card reveal">
           <div class="feature-icon icon-purple"><i class="fas fa-chart-line"></i></div>
           <div class="feature-title">Dashboard PRO & Temps Réel</div>
-          <p class="feature-desc">Compteurs dynamiques, scanner laser animé et feedback visuel "Pulse" instantané pour chaque présence.</p>
+          <p class="feature-desc">Compteurs dynamiques, scanner laser animé et feedback visuel "Pulse" instantané pour
+            chaque présence.</p>
         </div>
         <div class="feature-card reveal">
           <div class="feature-icon icon-amber"><i class="fas fa-file-pdf"></i></div>
@@ -2296,34 +2308,55 @@
   <section id="installation" style="background: var(--primary-light); padding: 5rem 0;">
     <div class="container">
       <div class="text-center reveal">
-        <span class="section-badge" style="background: white; color: var(--primary);"><i class="fas fa-server"></i> Déploiement Local</span>
+        <span class="section-badge" style="background: white; color: var(--primary);"><i class="fas fa-server"></i>
+          Déploiement Local</span>
         <h2 class="section-title">Déploiement 100% "Plug & Play"</h2>
-        <p class="section-sub mx-auto">Pensé pour les écoles de toute taille. E-Pointage fonctionne de manière autonome sur votre réseau local sans dépendre de l'Internet mondial.</p>
+        <p class="section-sub mx-auto">Pensé pour les écoles de toute taille. E-Pointage fonctionne de manière autonome
+          sur votre réseau local sans dépendre de l'Internet mondial.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
-        
-        <div style="background: white; padding: 2.5rem; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left; position: relative; overflow: hidden;" class="reveal">
-          <div style="width: 50px; height: 50px; background: var(--primary-light); color: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+
+        <div
+          style="background: white; padding: 2.5rem; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left; position: relative; overflow: hidden;"
+          class="reveal">
+          <div
+            style="width: 50px; height: 50px; background: var(--primary-light); color: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
             <i class="fas fa-wifi"></i>
           </div>
-          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--dark); margin-bottom: 1rem;">1. Réseau Intranet</h3>
-          <p style="color: var(--muted); line-height: 1.6; margin-bottom: 1rem;">Le serveur s'installe sur un ordinateur basique de votre établissement. Seule la connexion au routeur <strong>Wi-Fi local</strong> est requise. Vos données ne quittent pas votre école.</p>
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--dark); margin-bottom: 1rem;">1. Réseau Intranet
+          </h3>
+          <p style="color: var(--muted); line-height: 1.6; margin-bottom: 1rem;">Le serveur s'installe sur un ordinateur
+            basique de votre établissement. Seule la connexion au routeur <strong>Wi-Fi local</strong> est requise. Vos
+            données ne quittent pas votre école.</p>
         </div>
 
-        <div style="background: white; padding: 2.5rem; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left; position: relative; overflow: hidden;" class="reveal">
-          <div style="width: 50px; height: 50px; background: #e0e7ff; color: #4f46e5; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
+        <div
+          style="background: white; padding: 2.5rem; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left; position: relative; overflow: hidden;"
+          class="reveal">
+          <div
+            style="width: 50px; height: 50px; background: #e0e7ff; color: #4f46e5; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
             <i class="fas fa-link"></i>
           </div>
-          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--dark); margin-bottom: 1rem;">2. Accès simplifié (mDNS)</h3>
-          <p style="color: var(--muted); line-height: 1.6; margin-bottom: 1rem;">Fini les adresses IP complexes ! Définissez le nom de votre établissement en 1 clic. Le portail sera accessible pour tous vos professeurs à une adresse magique comme <strong>http://ecole-epointage.local</strong>.</p>
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--dark); margin-bottom: 1rem;">2. Accès simplifié
+            (mDNS)</h3>
+          <p style="color: var(--muted); line-height: 1.6; margin-bottom: 1rem;">Fini les adresses IP complexes !
+            Définissez le nom de votre établissement en 1 clic. Le portail sera accessible pour tous vos professeurs à
+            une adresse magique comme <strong>http://ecole-epointage.local</strong>.</p>
         </div>
 
-        <div style="background: white; padding: 2.5rem; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left; position: relative; overflow: hidden;" class="reveal">
-          <div style="width: 50px; height: 50px; background: #ecfdf5; color: #10b981; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
+        <div
+          style="background: white; padding: 2.5rem; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: left; position: relative; overflow: hidden;"
+          class="reveal">
+          <div
+            style="width: 50px; height: 50px; background: #ecfdf5; color: #10b981; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1.5rem;">
             <i class="fas fa-mobile-alt"></i>
           </div>
-          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--dark); margin-bottom: 1rem;">3. Configuration Mobile</h3>
-          <p style="color: var(--muted); line-height: 1.6; margin-bottom: 1rem;">Les étudiants scannent une seule fois le "QR de Configuration" affiché au secrétariat. Leur téléphone se verrouille sur le serveur de l'école pour empêcher toute fraude extraterritoriale.</p>
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--dark); margin-bottom: 1rem;">3. Configuration
+            Mobile</h3>
+          <p style="color: var(--muted); line-height: 1.6; margin-bottom: 1rem;">Les étudiants scannent une seule fois
+            le "QR de Configuration" affiché au secrétariat. Leur téléphone se verrouille sur le serveur de l'école pour
+            empêcher toute fraude extraterritoriale.</p>
         </div>
 
       </div>
@@ -2379,10 +2412,14 @@
           tableaux de bord ergonomiques.</p>
       </div>
       <div class="showcase-grid-web">
-        <div class="app-screen app-screen-web reveal"><img src="assets/Porte d'entrée.png" alt="Portail de connexion Web E-Pointage"></div>
-        <div class="app-screen app-screen-web reveal"><img src="assets/Dashbord.png" alt="Dashboard Administrateur E-Pointage"></div>
-        <div class="app-screen app-screen-web reveal"><img src="assets/Dashbord professeur.png" alt="Dashboard Professeur E-Pointage"></div>
-        <div class="app-screen app-screen-web reveal"><img src="assets/Dashbord Prof-1.png" alt="Tableau de bord de suivi de session"></div>
+        <div class="app-screen app-screen-web reveal"><img src="assets/Porte d'entrée.png"
+            alt="Portail de connexion Web E-Pointage"></div>
+        <div class="app-screen app-screen-web reveal"><img src="assets/Dashbord.png"
+            alt="Dashboard Administrateur E-Pointage"></div>
+        <div class="app-screen app-screen-web reveal"><img src="assets/Dashbord professeur.png"
+            alt="Dashboard Professeur E-Pointage"></div>
+        <div class="app-screen app-screen-web reveal"><img src="assets/Dashbord Prof-1.png"
+            alt="Tableau de bord de suivi de session"></div>
       </div>
 
       <!-- Mobile Showcase -->
@@ -2410,14 +2447,17 @@
       <div class="text-center reveal">
         <span class="section-badge"><i class="fas fa-comments"></i> Avis des utilisateurs</span>
         <h2 class="section-title">Ce que disent nos utilisateurs</h2>
-        <p class="section-sub mx-auto">Découvrez pourquoi les établissements sénégalais font confiance à E-Pointage pour leur gestion au quotidien.</p>
+        <p class="section-sub mx-auto">Découvrez pourquoi les établissements sénégalais font confiance à E-Pointage pour
+          leur gestion au quotidien.</p>
       </div>
       <div class="reviews-grid">
         <div class="review-card reveal">
           <div class="review-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
-          <p class="review-text">"E-Pointage a transformé la gestion des absences dans notre établissement. Le scan QR est ultra-rapide et les rapports PDF nous font gagner un temps précieux chaque semaine."</p>
+          <p class="review-text">"E-Pointage a transformé la gestion des absences dans notre établissement. Le scan QR
+            est ultra-rapide et les rapports PDF nous font gagner un temps précieux chaque semaine."</p>
           <div class="review-author">
             <div class="author-img">MF</div>
             <div class="author-info">
@@ -2428,9 +2468,11 @@
         </div>
         <div class="review-card reveal">
           <div class="review-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star"></i>
           </div>
-          <p class="review-text">"Mes étudiants adorent l'application ! Ils n'ont plus besoin d'attendre l'appel manuel, ils scannent et on commence le cours immédiatement. C'est l'innovation qu'il nous fallait."</p>
+          <p class="review-text">"Mes étudiants adorent l'application ! Ils n'ont plus besoin d'attendre l'appel manuel,
+            ils scannent et on commence le cours immédiatement. C'est l'innovation qu'il nous fallait."</p>
           <div class="review-author">
             <div class="author-img">FD</div>
             <div class="author-info">
@@ -2441,9 +2483,12 @@
         </div>
         <div class="review-card reveal">
           <div class="review-stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
           </div>
-          <p class="review-text">"Le scan QR est incroyablement rapide. Mes étudiants prennent leur présence en quelques secondes, ce qui me laisse plus de temps pour commencer le cours. Fini les appels manuels qui perdent 10 minutes."</p>
+          <p class="review-text">"Le scan QR est incroyablement rapide. Mes étudiants prennent leur présence en quelques
+            secondes, ce qui me laisse plus de temps pour commencer le cours. Fini les appels manuels qui perdent 10
+            minutes."</p>
           <div class="review-author">
             <div class="author-img">ID</div>
             <div class="author-info">
@@ -2506,54 +2551,79 @@
   </section>
 
   <!-- DEPLOYMENT GUIDE (NEW) -->
-  <section id="deployment" style="background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%); padding: 8rem 0; border-top: 1px solid #e2e8f0;">
+  <section id="deployment"
+    style="background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%); padding: 8rem 0; border-top: 1px solid #e2e8f0;">
     <div class="container">
       <div class="text-center reveal">
-        <span class="section-badge" style="background: #e0e7ff; color: #4338ca;"><i class="fas fa-rocket"></i> Déploiement</span>
+        <span class="section-badge" style="background: #e0e7ff; color: #4338ca;"><i class="fas fa-rocket"></i>
+          Déploiement</span>
         <h2 class="section-title">Installation de E-Pointage dans un établissement</h2>
-        <p class="section-sub mx-auto">Une infrastructure robuste sur mesure pour votre école, ne nécessitant aucune connexion internet permanente.</p>
+        <p class="section-sub mx-auto">Une infrastructure robuste sur mesure pour votre école, ne nécessitant aucune
+          connexion internet permanente.</p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 4rem 3rem; margin-top: 7rem;">
-        
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 4rem 3rem; margin-top: 7rem;">
+
         <!-- Step 1 -->
-        <div class="feature-card reveal" style="background: rgba(255,255,255,0.9); backdrop-filter: blur(15px); padding: 4rem 2rem 3rem; border-radius: 40px; border: 1px solid white; box-shadow: 0 25px 50px rgba(0,0,0,0.04); position: relative; transition: all 0.4s ease; text-align: center;">
-          <div style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); width: 50px; height: 50px; background: linear-gradient(135deg, #2596be, #1e7a9e); color: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(37, 150, 190, 0.3); z-index: 10;">1</div>
-          <div style="width: 70px; height: 70px; background: #e0f2fe; color: #0284c7; border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 2rem;">
+        <div class="feature-card reveal"
+          style="background: rgba(255,255,255,0.9); backdrop-filter: blur(15px); padding: 4rem 2rem 3rem; border-radius: 40px; border: 1px solid white; box-shadow: 0 25px 50px rgba(0,0,0,0.04); position: relative; transition: all 0.4s ease; text-align: center;">
+          <div
+            style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); width: 50px; height: 50px; background: linear-gradient(135deg, #2596be, #1e7a9e); color: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(37, 150, 190, 0.3); z-index: 10;">
+            1</div>
+          <div
+            style="width: 70px; height: 70px; background: #e0f2fe; color: #0284c7; border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 2rem;">
             <i class="fas fa-server"></i>
           </div>
           <h4 style="font-size: 1.3rem; font-weight: 800; color: #1e293b; margin-bottom: 1rem;">Serveur Local</h4>
-          <p style="font-size: 0.95rem; color: #64748b; line-height: 1.7;">Installez Node.js et XAMPP sur le PC de l'administration pour créer votre portail privé.</p>
+          <p style="font-size: 0.95rem; color: #64748b; line-height: 1.7;">Installez Node.js et XAMPP sur le PC de
+            l'administration pour créer votre portail privé.</p>
         </div>
 
         <!-- Step 2 -->
-        <div class="feature-card reveal" style="background: rgba(255,255,255,0.9); backdrop-filter: blur(15px); padding: 4rem 2rem 3rem; border-radius: 40px; border: 1px solid white; box-shadow: 0 25px 50px rgba(0,0,0,0.04); position: relative; transition: all 0.4s ease; text-align: center;">
-          <div style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); width: 50px; height: 50px; background: linear-gradient(135deg, #10b981, #059669); color: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3); z-index: 10;">2</div>
-          <div style="width: 70px; height: 70px; background: #d1fae5; color: #059669; border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 2rem;">
+        <div class="feature-card reveal"
+          style="background: rgba(255,255,255,0.9); backdrop-filter: blur(15px); padding: 4rem 2rem 3rem; border-radius: 40px; border: 1px solid white; box-shadow: 0 25px 50px rgba(0,0,0,0.04); position: relative; transition: all 0.4s ease; text-align: center;">
+          <div
+            style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); width: 50px; height: 50px; background: linear-gradient(135deg, #10b981, #059669); color: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3); z-index: 10;">
+            2</div>
+          <div
+            style="width: 70px; height: 70px; background: #d1fae5; color: #059669; border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 2rem;">
             <i class="fas fa-link"></i>
           </div>
           <h4 style="font-size: 1.3rem; font-weight: 800; color: #1e293b; margin-bottom: 1rem;">Lien Pro Privé</h4>
-          <p style="font-size: 0.95rem; color: #64748b; line-height: 1.7;">Configurez un lien personnalisé type <code>http://epointage</code> accessible uniquement dans l'école.</p>
+          <p style="font-size: 0.95rem; color: #64748b; line-height: 1.7;">Configurez un lien personnalisé type
+            <code>http://epointage</code> accessible uniquement dans l'école.
+          </p>
         </div>
 
         <!-- Step 3 -->
-        <div class="feature-card reveal" style="background: rgba(255,255,255,0.9); backdrop-filter: blur(15px); padding: 4rem 2rem 3rem; border-radius: 40px; border: 1px solid white; box-shadow: 0 25px 50px rgba(0,0,0,0.04); position: relative; transition: all 0.4s ease; text-align: center;">
-          <div style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); width: 50px; height: 50px; background: linear-gradient(135deg, #6366f1, #4f46e5); color: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3); z-index: 10;">3</div>
-          <div style="width: 70px; height: 70px; background: #eef2ff; color: #4f46e5; border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 2rem;">
+        <div class="feature-card reveal"
+          style="background: rgba(255,255,255,0.9); backdrop-filter: blur(15px); padding: 4rem 2rem 3rem; border-radius: 40px; border: 1px solid white; box-shadow: 0 25px 50px rgba(0,0,0,0.04); position: relative; transition: all 0.4s ease; text-align: center;">
+          <div
+            style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); width: 50px; height: 50px; background: linear-gradient(135deg, #6366f1, #4f46e5); color: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3); z-index: 10;">
+            3</div>
+          <div
+            style="width: 70px; height: 70px; background: #eef2ff; color: #4f46e5; border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 2rem;">
             <i class="fas fa-wifi"></i>
           </div>
           <h4 style="font-size: 1.3rem; font-weight: 800; color: #1e293b; margin-bottom: 1rem;">Wi-Fi local</h4>
-          <p style="font-size: 0.95rem; color: #64748b; line-height: 1.7;">Connectez les serveurs et les mobiles des profs/élèves sur le même réseau local Wi-Fi.</p>
+          <p style="font-size: 0.95rem; color: #64748b; line-height: 1.7;">Connectez les serveurs et les mobiles des
+            profs/élèves sur le même réseau local Wi-Fi.</p>
         </div>
 
         <!-- Step 4 -->
-        <div class="feature-card reveal" style="background: rgba(255,255,255,0.9); backdrop-filter: blur(15px); padding: 4rem 2rem 3rem; border-radius: 40px; border: 1px solid white; box-shadow: 0 25px 50px rgba(0,0,0,0.04); position: relative; transition: all 0.4s ease; text-align: center;">
-          <div style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); width: 50px; height: 50px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3); z-index: 10;">4</div>
-          <div style="width: 70px; height: 70px; background: #fffbeb; color: #d97706; border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 2rem;">
+        <div class="feature-card reveal"
+          style="background: rgba(255,255,255,0.9); backdrop-filter: blur(15px); padding: 4rem 2rem 3rem; border-radius: 40px; border: 1px solid white; box-shadow: 0 25px 50px rgba(0,0,0,0.04); position: relative; transition: all 0.4s ease; text-align: center;">
+          <div
+            style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); width: 50px; height: 50px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3); z-index: 10;">
+            4</div>
+          <div
+            style="width: 70px; height: 70px; background: #fffbeb; color: #d97706; border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 2rem;">
             <i class="fas fa-check-double"></i>
           </div>
           <h4 style="font-size: 1.3rem; font-weight: 800; color: #1e293b; margin-bottom: 1rem;">Pointage Immédiat</h4>
-          <p style="font-size: 0.95rem; color: #64748b; line-height: 1.7;">Le scan se fait instantanément sans consommer de données internet (Sync Cloud Local).</p>
+          <p style="font-size: 0.95rem; color: #64748b; line-height: 1.7;">Le scan se fait instantanément sans consommer
+            de données internet (Sync Cloud Local).</p>
         </div>
 
       </div>
@@ -2792,6 +2862,9 @@
         <a href="install-ios.html" class="btn btn-ghost">
           <i class="fab fa-apple"></i> Installer pour iOS (PWA)
         </a>
+        <a href="deployment.html" class="btn btn-ghost" style="border: 1px solid rgba(255,255,255,0.2);">
+          <i class="fas fa-university"></i> Déploiement Institutionnel
+        </a>
       </div>
     </div>
   </section>
@@ -2808,7 +2881,7 @@
           <a href="#features">Fonctionnalités</a>
           <a href="#how">Fonctionnement</a>
           <a href="#roles">Rôles</a>
-          <a href="#pricing">Tarification</a>
+          <a href="deployment.html" style="color: var(--primary); font-weight: 800;">Déploiement</a>
           <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
         </div>
@@ -2892,7 +2965,7 @@
     // ── Netlify Form : soumission AJAX ──
     const contactForm = document.getElementById('contactForm');
     const formSuccess = document.getElementById('form-success');
-    const submitBtn  = document.getElementById('contact-submit');
+    const submitBtn = document.getElementById('contact-submit');
 
     if (contactForm) {
       contactForm.addEventListener('submit', async (e) => {
