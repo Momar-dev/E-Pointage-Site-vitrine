@@ -8,20 +8,22 @@
     <style id="expo-reset">
       html, body {
         height: 100%;
-        background-color: #2596be; /* Bleu pour le splash screen */
+        background-color: #2596be;
         margin: 0;
         padding: 0;
-        overflow: hidden; /* Empêche toute la page de bouger */
+        overflow: hidden;
         transition: background-color 0.5s ease;
       }
       #root {
         display: flex;
-        height: 100%;
-        flex: 1;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
         padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         background-color: transparent;
-        overflow-y: auto !important; /* FORCE LE SCROLL ICI */
-        -webkit-overflow-scrolling: touch; /* SCROLL FLUIDE IPHONE */
       }
     </style>
     <meta name="theme-color" content="#2596be">
@@ -35,7 +37,6 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script>
-      // Script pour harmoniser la barre d'état après le splash
       window.addEventListener('load', function() {
         setTimeout(function() {
           document.body.style.backgroundColor = '#f8fafc';
@@ -43,6 +44,6 @@
         }, 2500);
       });
     </script>
-    <script src="/app-mobile/_expo/static/js/web/index-bf05978e69e6f1a50e2baccfde2a5d3a.js" defer></script>
+    <script src="/app-mobile/_expo/static/js/web/index-bee8a68094a8a5b485962a3c1075f52e.js" defer></script>
   </body>
 </html>
