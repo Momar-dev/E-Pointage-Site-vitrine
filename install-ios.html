@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Installation Mobile - E-Pointage</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="E-Pointage">
     <style>
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background-color: #0f172a; 
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0f172a;
             color: white;
             min-height: 100vh;
         }
-        .step-card { 
-            background: rgba(30, 41, 59, 0.7); 
-            border-radius: 24px; 
-            padding: 1.5rem; 
-            margin-bottom: 1rem; 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
+
+        .step-card {
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .step-number { 
-            width: 32px; 
-            height: 32px; 
-            background: #2596be; 
-            color: white; 
-            border-radius: 8px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            font-weight: 800; 
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: #2596be;
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
             margin-right: 1rem;
             flex-shrink: 0;
         }
+
         .btn-lancer {
             background: linear-gradient(135deg, #2596be 0%, #6366f1 100%);
             color: white;
@@ -49,10 +59,12 @@
             box-shadow: 0 10px 30px rgba(37, 150, 190, 0.3);
             transition: all 0.3s;
         }
+
         .btn-lancer:hover {
             transform: scale(1.02);
             box-shadow: 0 15px 40px rgba(37, 150, 190, 0.4);
         }
+
         .note-box {
             background: rgba(245, 158, 11, 0.1);
             border: 1px solid rgba(245, 158, 11, 0.3);
@@ -62,6 +74,7 @@
             color: #fbbf24;
             font-size: 0.9rem;
         }
+
         .back-link {
             display: flex;
             align-items: center;
@@ -74,12 +87,14 @@
         }
     </style>
 </head>
+
 <body class="p-6">
     <div class="max-w-md mx-auto">
         <header class="text-center mb-8 pt-8">
             <img src="assets/logo.png" alt="E-Pointage Logo" class="w-24 h-24 mx-auto mb-6">
             <h1 class="text-3xl font-extrabold mb-2">E-Pointage Mobile</h1>
-            <p class="text-slate-400 text-sm">Suivez les <strong>étapes</strong> ci-dessous pour installer l'application sur votre appareil iOS ou Android.</p>
+            <p class="text-slate-400 text-sm">Suivez les <strong>étapes</strong> ci-dessous pour installer l'application
+                sur votre appareil iOS ou Android.</p>
         </header>
 
         <!-- Étape 1 -->
@@ -87,8 +102,11 @@
             <div class="flex items-start">
                 <div class="step-number">1</div>
                 <div>
-                    <h2 class="font-bold mb-1">Ouvrez l'Application et entrez votre Code</h2>
-                    <p class="text-slate-400 text-xs leading-relaxed">Cliquez sur le bouton ci-dessous, puis saisissez le code de votre établissement fourni par l'administration.</p>
+                    <h2 class="font-bold mb-1">Ouvrez l'Application</h2>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Cliquez sur le bouton bleu ci-dessous pour ouvrir l'interface mobile dans votre navigateur
+                        Safari.
+                    </p>
                 </div>
             </div>
         </div>
@@ -102,10 +120,11 @@
             <div class="flex items-start">
                 <div class="step-number">2</div>
                 <div>
-                    <h2 class="font-bold mb-1">Attendez la redirection</h2>
+                    <h2 class="font-bold mb-1">Ajoutez à l'écran d'accueil</h2>
                     <p class="text-slate-400 text-xs leading-relaxed">
-                        L'application va vous rediriger automatiquement vers le serveur local de votre école. 
-                        <strong>Assurez-vous d'être connecté au Wi-Fi de l'établissement.</strong>
+                        <strong>Une fois l'application ouverte</strong>, appuyez sur le bouton <strong>Partager</strong>
+                        en bas de Safari, puis choisissez
+                        <strong>"Sur l'écran d'accueil"</strong>.
                     </p>
                 </div>
             </div>
@@ -116,18 +135,18 @@
             <div class="flex items-start">
                 <div class="step-number">3</div>
                 <div>
-                    <h2 class="font-bold mb-1">Ajoutez à l'écran d'accueil</h2>
+                    <h2 class="font-bold mb-1">Configurez votre école</h2>
                     <p class="text-slate-400 text-xs leading-relaxed">
-                        Une fois sur le portail de votre école, appuyez sur 
-                        <strong>Partager</strong> puis choisissez 
-                        <strong>"Sur l'écran d'accueil"</strong>.
+                        Ouvrez l'icône <strong>E-Pointage</strong> créée sur votre écran, saisissez votre <strong>Code
+                            Établissement</strong> et assurez-vous d'être sur le <strong>Wi-Fi de l'école</strong>.
                     </p>
                 </div>
             </div>
         </div>
 
         <div class="note-box">
-            <p><i class="fas fa-info-circle"></i> <strong>Note :</strong> Une fois installée, ouvrez l'icône sur votre écran d'accueil et saisissez votre <strong>Code École</strong> pour vous connecter.</p>
+            <p><i class="fas fa-info-circle"></i> <strong>Astuce :</strong> En ajoutant l'application depuis cette page,
+                l'icône restera toujours fonctionnelle même si l'adresse du serveur de l'école change.</p>
         </div>
 
         <a href="index.html" class="back-link">
@@ -135,8 +154,9 @@
         </a>
 
         <div class="text-center mt-12 opacity-30 text-xs">
-            e-pointage.netlify.app
+
         </div>
     </div>
 </body>
+
 </html>
