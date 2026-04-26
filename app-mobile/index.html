@@ -3,47 +3,36 @@
   <head>
     <meta charset="utf-8" />
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>E-Pointage</title>
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
     <style id="expo-reset">
-      html, body {
+      /* These styles make the body full-height */
+      html,
+      body {
         height: 100%;
-        background-color: #2596be;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        transition: background-color 0.5s ease;
       }
+      /* These styles disable body scrolling if you are using <ScrollView> */
+      body {
+        overflow: hidden;
+      }
+      /* These styles make the root element full-height */
       #root {
         display: flex;
-        flex-direction: column;
-        height: 100vh;
-        width: 100vw;
-        padding-top: env(safe-area-inset-top);
-        padding-bottom: env(safe-area-inset-bottom);
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        background-color: transparent;
+        height: 100%;
+        flex: 1;
       }
     </style>
-    <meta name="theme-color" content="#2596be">
-    <link rel="apple-touch-icon" href="/app-mobile/pwa-icon.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="manifest" href="/app-mobile/manifest.json">
-    <link rel="icon" href="/app-mobile/favicon.ico" />
-  </head>
+  <meta name="theme-color" content="#f8fafc">
+<link rel="icon" href="/app-mobile/favicon.ico" /></head>
+
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- Use static rendering with Expo Router to support running without JavaScript. -->
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <!-- The root element for your Expo app. -->
     <div id="root"></div>
-    <script>
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          document.body.style.backgroundColor = '#f8fafc';
-          document.getElementById('root').style.backgroundColor = '#f8fafc';
-        }, 2500);
-      });
-    </script>
-    <script src="/app-mobile/_expo/static/js/web/index-bee8a68094a8a5b485962a3c1075f52e.js" defer></script>
-  </body>
+  <script src="/app-mobile/_expo/static/js/web/index-a257ad6646b3589aaa404bb50cfee899.js" defer></script>
+</body>
 </html>
