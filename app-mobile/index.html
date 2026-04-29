@@ -1,16 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
     <title>E-Pointage</title>
-    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+
+    <!-- ✅ PWA iOS — Status Bar & Standalone Mode -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="E-Pointage" />
+
+    <!-- ✅ Manifest & Icons -->
+    <link rel="manifest" href="/app-mobile/manifest.json" />
+    <link rel="apple-touch-icon" href="/app-mobile/icon-pwa.png" />
+    <link rel="icon" href="/app-mobile/favicon.ico" />
+
+    <!-- ✅ Theme Color — Bleu primaire de l'app -->
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="msapplication-navbutton-color" content="#2563eb" />
+
+    <!-- The `react-native-web` recommended style reset -->
     <style id="expo-reset">
       /* These styles make the body full-height */
       html,
       body {
         height: 100%;
+        /* Ensure iOS safe area is respected */
+        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+        box-sizing: border-box;
+        background-color: #2563eb;
       }
       /* These styles disable body scrolling if you are using <ScrollView> */
       body {
@@ -23,18 +42,14 @@
         flex: 1;
       }
     </style>
-  <meta name="theme-color" content="#2596be">
-  <link rel="apple-touch-icon" href="icon-pwa.png">
-  <link rel="icon" href="icon-pwa.png">
-</head>
+  </head>
 
   <body>
-    <!-- Use static rendering with Expo Router to support running without JavaScript. -->
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
     <!-- The root element for your Expo app. -->
+    <noscript>
+      Vous devez activer JavaScript pour utiliser cette application.
+    </noscript>
     <div id="root"></div>
-  <script src="/app-mobile/_expo/static/js/web/index-5ea5c665343c91c72714f555f1931d76.js" defer></script>
-</body>
+    <script src="/app-mobile/_expo/static/js/web/index-f072d5b4a88a626f2c7ab347b940a964.js" defer></script>
+  </body>
 </html>

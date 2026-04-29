@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/png" href="assets/icon-pwa.png">
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <link rel="apple-touch-icon" href="assets/icon-pwa.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -76,7 +76,7 @@
             justify-content: center;
             width: 26px;
             height: 26px;
-            background: rgba(37,150,190,0.2);
+            background: rgba(37, 150, 190, 0.2);
             border-radius: 6px;
             margin: 0 3px;
             vertical-align: middle;
@@ -116,7 +116,9 @@
             transition: color 0.2s;
         }
 
-        .back-link:hover { color: #94a3b8; }
+        .back-link:hover {
+            color: #94a3b8;
+        }
 
         .tab-btn {
             flex: 1;
@@ -128,16 +130,24 @@
             cursor: pointer;
             transition: all 0.2s;
         }
+
         .tab-btn.active {
             background: linear-gradient(135deg, #2596be, #6366f1);
             color: white;
         }
+
         .tab-btn:not(.active) {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             color: #94a3b8;
         }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
     </style>
 </head>
 
@@ -145,12 +155,13 @@
     <div class="max-w-md mx-auto">
         <!-- Header -->
         <header class="text-center mb-8 pt-8">
-            <div class="w-20 h-20 mx-auto mb-5 rounded-3xl overflow-hidden shadow-xl" style="box-shadow: 0 10px 30px rgba(37,150,190,0.3);">
+            <div class="w-20 h-20 mx-auto mb-5 rounded-3xl overflow-hidden shadow-xl"
+                style="box-shadow: 0 10px 30px rgba(37,150,190,0.3);">
                 <img src="assets/icon-pwa.png" alt="E-Pointage Logo" class="w-full h-full object-cover">
             </div>
             <h1 class="text-2xl font-extrabold mb-2">Installer E-Pointage</h1>
         </header>
-        
+
         <!-- iOS Instructions Only -->
         <div id="tab-ios" class="tab-content active">
             <div class="step-card">
@@ -173,8 +184,9 @@
                 <div>
                     <h2 class="font-bold mb-1 text-sm">Appuyez sur "Partager"</h2>
                     <p class="text-slate-400 text-xs leading-relaxed">
-                        En bas de Safari, appuyez sur l'icône 
-                        <span class="icon-inline"><i class="fas fa-arrow-up-from-bracket" style="font-size:11px; color:#2596be;"></i></span>
+                        En bas de Safari, appuyez sur l'icône
+                        <span class="icon-inline"><i class="fas fa-arrow-up-from-bracket"
+                                style="font-size:11px; color:#2596be;"></i></span>
                         (carré avec flèche vers le haut).
                     </p>
                 </div>
@@ -185,9 +197,10 @@
                 <div>
                     <h2 class="font-bold mb-1 text-sm">Sur l'écran d'accueil</h2>
                     <p class="text-slate-400 text-xs leading-relaxed">
-                        Dans le menu qui s'ouvre, faites défiler et tapez sur 
+                        Dans le menu qui s'ouvre, faites défiler et tapez sur
                         <strong>"Sur l'écran d'accueil"</strong>
-                        <span class="icon-inline"><i class="fas fa-plus" style="font-size:10px; color:#2596be;"></i></span>
+                        <span class="icon-inline"><i class="fas fa-plus"
+                                style="font-size:10px; color:#2596be;"></i></span>
                         puis confirmez avec <strong>"Ajouter"</strong>.
                     </p>
                 </div>
@@ -198,8 +211,8 @@
                 <div>
                     <h2 class="font-bold mb-1 text-sm">Configurez votre école</h2>
                     <p class="text-slate-400 text-xs leading-relaxed">
-                        Ouvrez l'icône <strong>E-Pointage</strong> depuis votre écran d'accueil. 
-                        Entrez votre <strong>Code Établissement</strong> (ex: ISMEPOINTAGE) 
+                        Ouvrez l'icône <strong>E-Pointage</strong> depuis votre écran d'accueil.
+                        Entrez votre <strong>Code Établissement</strong> (ex: ISMEPOINTAGE)
                         et assurez-vous d'être sur le <strong>Wi-Fi de l'école</strong>.
                     </p>
                 </div>
@@ -207,13 +220,13 @@
 
             <div class="success-box">
                 <i class="fas fa-check-circle mr-1"></i>
-                <strong>C'est tout !</strong> L'application fonctionne maintenant comme une vraie app native, 
+                <strong>C'est tout !</strong> L'application fonctionne maintenant comme une vraie app native,
                 même en plein écran, sans la barre d'adresse de Safari.
             </div>
 
             <div class="note-box">
                 <i class="fas fa-info-circle mr-1"></i>
-                <strong>Conseil :</strong> Si l'icône affiche un "E" à la place du logo, 
+                <strong>Conseil :</strong> Si l'icône affiche un "E" à la place du logo,
                 supprimez et réajoutez l'application depuis cette page.
             </div>
         </div>
