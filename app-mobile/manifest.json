@@ -1,15 +1,17 @@
 {
+  "name": "E-Pointage",
   "short_name": "E-Pointage",
-  "name": "E-Pointage Gestion de Présence",
+  "start_url": "/app-mobile/",
+  "display": "standalone",
+  "background_color": "#2596be",
+  "theme_color": "#2596be",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "/app-mobile/icon-pwa.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
-  ],
-  "start_url": "/app-mobile/index.html",
-  "display": "standalone",
-  "theme_color": "#2563eb",
-  "background_color": "#2563eb"
+  ]
 }
