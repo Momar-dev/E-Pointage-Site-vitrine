@@ -1,54 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>E-Pointage</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>E-Pointage</title>
+    <!-- ✅ PWA iOS — Status Bar & Standalone Mode -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="E-Pointage" />
 
-  <!-- ✅ PWA iOS — Status Bar & Standalone Mode -->
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="E-Pointage" />
+    <!-- ✅ Manifest & Icons -->
+    <link rel="manifest" href="/app-mobile/manifest.json" />
+    <link rel="apple-touch-icon" href="/app-mobile/icon-pwa.png" />
+    <link rel="icon" href="/app-mobile/favicon.ico" />
 
-  <!-- ✅ Manifest & Icons -->
-  <link rel="manifest" href="/app-mobile/manifest.json" />
-  <link rel="apple-touch-icon" href="/app-mobile/icon-pwa.png" />
-  <link rel="icon" href="/app-mobile/favicon.ico" />
+    <!-- ✅ Theme Color — Bleu primaire de l'app -->
+    <meta name="theme-color" content="#2596be" />
+    <meta name="msapplication-navbutton-color" content="#2596be" />
 
-  <!-- ✅ Theme Color — Bleu primaire de l'app -->
-  <meta name="theme-color" content="#2596be" />
-  <meta name="msapplication-navbutton-color" content="#2596be" />
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      /* These styles make the body full-height */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #f8fafc;
+      }
+      /* These styles make the root element full-height */
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+    </style>
+  </head>
 
-  <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
-  <style id="expo-reset">
-    /* These styles make the body full-height */
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      background-color: #2596be;
-    }
-
-    /* These styles make the root element full-height */
-    #root {
-      display: flex;
-      height: 100%;
-      flex: 1;
-    }
-  </style>
-</head>
-
-<body>
-  <!-- Use static rendering with Expo Router to support running without JavaScript. -->
-  <noscript>
-    Vous devez activer JavaScript pour utiliser cette application.
-  </noscript>
-  <!-- The root element for your Expo app. -->
-  <div id="root"></div>
-  <script src="/app-mobile/_expo/static/js/web/index-6127b1cc7641fcfaf819a4d243e906fe.js" defer></script>
+  <body>
+    <!-- Use static rendering with Expo Router to support running without JavaScript. -->
+    <noscript>
+      Vous devez activer JavaScript pour utiliser cette application.
+    </noscript>
+    <!-- The root element for your Expo app. -->
+    <div id="root"></div>
+  <script src="/app-mobile/_expo/static/js/web/index-31fc487b4fa3b2a33274f777d1982132.js" defer></script>
 </body>
-
 </html>
