@@ -18,18 +18,38 @@
 
     <!-- The `react-native-web` recommended style reset -->
     <style id="expo-reset">
-      html, body { height: 100%; background-color: #2596be; }
-      body { overflow: hidden; }
-      #root { display: flex; height: 100%; flex: 1; }
-      /* Fix scrolling for ScrollView on iOS PWA */
-      div[style*="overflow"] { -webkit-overflow-scrolling: touch !important; }
-      [data-focusable="true"] { touch-action: pan-y; }
-      /* Force les ScrollView RNW à être défilables */
-      div[class*="ScrollView"] { overflow-y: auto !important; -webkit-overflow-scrolling: touch !important; }
-      /* Hack pour react-native-web ScrollView sur Safari PWA */
-      [style*="overflow-y: scroll"], [style*="overflow: scroll"], [style*="overflow: auto"] {
-        -webkit-overflow-scrolling: touch !important;
+      /* iOS PWA - méthode standard pour bloquer le scroll du body */
+      html {
+        height: -webkit-fill-available;
+        overflow: hidden;
+      }
+      body {
+        height: 100%;
+        min-height: -webkit-fill-available;
+        overflow: hidden;
+        position: fixed;   /* La clé : empêche le scroll global sur iOS */
+        width: 100%;
+        margin: 0;
+        background-color: #2596be;
+        touch-action: none; /* Bloque les gestes parasites */
+      }
+      #root {
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        flex: 1;
+      }
+      /* Autoriser le scroll UNIQUEMENT dans les ScrollView de React Native Web */
+      [style*="overflow-y: scroll"],
+      [style*="overflow-y:scroll"],
+      [style*="overflow: scroll"],
+      [style*="overflow:scroll"],
+      [style*="overflow-x: hidden"][style*="overflow-y:"],
+      [style*="overflow-x:hidden"][style*="overflow-y:"] {
         overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        overscroll-behavior: contain;
+        touch-action: pan-y !important;
       }
     </style>
   <meta name="theme-color" content="#2596be">
