@@ -42,12 +42,15 @@
         flex: 1;
       }
       /* Autoriser le scroll UNIQUEMENT dans les ScrollView de React Native Web */
+      [style*="overflow-y: auto"],
+      [style*="overflow-y:auto"],
       [style*="overflow-y: scroll"],
       [style*="overflow-y:scroll"],
       [style*="overflow: scroll"],
       [style*="overflow:scroll"],
       [style*="overflow-x: hidden"][style*="overflow-y:"],
-      [style*="overflow-x:hidden"][style*="overflow-y:"] {
+      [style*="overflow-x:hidden"][style*="overflow-y:"],
+      [id^="pwa-scrollable"] {
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch !important;
         overscroll-behavior: contain;
@@ -87,6 +90,6 @@
         lastTouchEnd = now;
       }, false);
     </script>
-  <script src="/app-mobile/_expo/static/js/web/index-966afb68784645804bc4cb9f194572a6.js" defer></script>
+  <script src="/app-mobile/_expo/static/js/web/index-5b3c0a97ad4a8e154afbc1a8c1df4ec2.js" defer></script>
 </body>
 </html>
