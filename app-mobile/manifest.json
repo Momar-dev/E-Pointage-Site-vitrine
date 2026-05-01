@@ -1,0 +1,17 @@
+{
+  "short_name": "E-Pointage",
+  "name": "E-Pointage Mobile",
+  "icons": [
+    {
+      "src": "/app-mobile/pwa-icon.png",
+      "type": "image/png",
+      "sizes": "1024x1024",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/app-mobile/",
+  "background_color": "#2596be",
+  "display": "standalone",
+  "theme_color": "#2596be",
+  "orientation": "portrait"
+}

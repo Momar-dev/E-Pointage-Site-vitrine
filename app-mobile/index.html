@@ -1,38 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
     <title>E-Pointage</title>
-    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+
+    <!-- iOS PWA tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="E-Pointage" />
+    <link rel="apple-touch-icon" href="/app-mobile/pwa-icon.png" />
+    <link rel="manifest" href="/app-mobile/manifest.json" />
+    
+    <meta name="theme-color" content="#2596be">
+    <link rel="icon" href="/app-mobile/favicon.ico" />
+
+    <!-- The `react-native-web` recommended style reset -->
     <style id="expo-reset">
-      /* These styles make the body full-height */
-      html,
-      body {
-        height: 100%;
-      }
-      /* These styles disable body scrolling if you are using <ScrollView> */
-      body {
-        overflow: hidden;
-      }
-      /* These styles make the root element full-height */
-      #root {
-        display: flex;
-        height: 100%;
-        flex: 1;
-      }
+      html, body { height: 100%; background-color: #2596be; }
+      body { overflow: hidden; }
+      #root { display: flex; height: 100%; flex: 1; }
     </style>
   <meta name="theme-color" content="#2596be">
 <link rel="icon" href="/app-mobile/favicon.ico" /></head>
-
   <body>
-    <!-- Use static rendering with Expo Router to support running without JavaScript. -->
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <!-- The root element for your Expo app. -->
+    <noscript>Vous devez activer le JavaScript pour faire fonctionner cette application.</noscript>
     <div id="root"></div>
-  <script src="/app-mobile/_expo/static/js/web/index-b51c5709ef5950e2b3377af723b480d8.js" defer></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/app-mobile/sw.js')
+            .then(reg => console.log('Service Worker enregistré', reg.scope))
+            .catch(err => console.log('Erreur Service Worker', err));
+        });
+      }
+    </script>
+  <script src="/app-mobile/_expo/static/js/web/index-606f38325b7a538ba8d64e37fd64d2be.js" defer></script>
 </body>
 </html>
