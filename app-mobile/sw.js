@@ -1,4 +1,4 @@
-const CACHE_NAME = 'epointage-pwa-v1';
+const CACHE_NAME = 'epointage-pwa-v2';
 
 // Fichiers de base à mettre en cache immédiatement
 const ASSETS_TO_CACHE = [
