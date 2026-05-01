@@ -21,6 +21,16 @@
       html, body { height: 100%; background-color: #2596be; }
       body { overflow: hidden; }
       #root { display: flex; height: 100%; flex: 1; }
+      /* Fix scrolling for ScrollView on iOS PWA */
+      div[style*="overflow"] { -webkit-overflow-scrolling: touch !important; }
+      [data-focusable="true"] { touch-action: pan-y; }
+      /* Force les ScrollView RNW à être défilables */
+      div[class*="ScrollView"] { overflow-y: auto !important; -webkit-overflow-scrolling: touch !important; }
+      /* Hack pour react-native-web ScrollView sur Safari PWA */
+      [style*="overflow-y: scroll"], [style*="overflow: scroll"], [style*="overflow: auto"] {
+        -webkit-overflow-scrolling: touch !important;
+        overflow-y: auto !important;
+      }
     </style>
   <meta name="theme-color" content="#2596be">
 <link rel="icon" href="/app-mobile/favicon.ico" /></head>
@@ -28,6 +38,7 @@
     <noscript>Vous devez activer le JavaScript pour faire fonctionner cette application.</noscript>
     <div id="root"></div>
     <script>
+      // Service Worker pour le mode hors-ligne
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('/app-mobile/sw.js')
@@ -35,7 +46,25 @@
             .catch(err => console.log('Erreur Service Worker', err));
         });
       }
+
+      // Bloquer le scroll du body pour empêcher l'apparition
+      // de la barre Safari lors des interactions tactiles
+      document.addEventListener('touchmove', function(e) {
+        if (e.target === document.body || e.target === document.documentElement) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+
+      // Empêcher le "double-tap to zoom" de Safari qui déclenche le chrome
+      let lastTouchEnd = 0;
+      document.addEventListener('touchend', function(e) {
+        const now = Date.now();
+        if (now - lastTouchEnd <= 300) {
+          e.preventDefault();
+        }
+        lastTouchEnd = now;
+      }, false);
     </script>
-  <script src="/app-mobile/_expo/static/js/web/index-606f38325b7a538ba8d64e37fd64d2be.js" defer></script>
+  <script src="/app-mobile/_expo/static/js/web/index-e5f1b9c3f378967bdec34fed85cc0458.js" defer></script>
 </body>
 </html>
