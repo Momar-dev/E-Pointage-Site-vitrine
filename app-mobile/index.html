@@ -19,13 +19,12 @@
   <meta name="theme-color" content="#2596be">
   <link rel="icon" href="/app-mobile/favicon.ico" />
 
-  <!-- The `react-native-web` recommended style reset -->
   <style id="expo-reset">
-    /* iOS PWA - méthode standard pour bloquer le scroll du body */
+    /* Fond bleu pendant le chargement (splash screen) */
     html {
       height: -webkit-fill-available;
       overflow: hidden;
-      background-color: #2596be; /* Retour au BLEU pour le Splash */
+      background-color: #2596be;
     }
 
     body {
@@ -35,8 +34,9 @@
       position: fixed;
       width: 100%;
       margin: 0;
-      background-color: #2596be; /* Retour au BLEU pour le Splash */
-      touch-action: none;
+      padding: 0;
+      background-color: #2596be;
+      /* NE PAS mettre touch-action: none ici — ça bloque tout le scroll */
     }
 
     #root {
@@ -44,40 +44,22 @@
       overflow: hidden;
       display: flex;
       flex: 1;
-      background-color: #ffffff; /* BLANC ici pour l'application */
+      background-color: #ffffff;
     }
 
-    /* Autoriser le scroll UNIQUEMENT dans les ScrollView de React Native Web */
-    [style*="overflow-y: auto"],
-    [style*="overflow-y:auto"],
+    /*
+     * SCROLL SUR IPHONE PWA
+     * React Native Web génère des divs avec overflow-y: scroll ou auto.
+     * On s'assure que ces divs peuvent recevoir les gestes tactiles.
+     */
     [style*="overflow-y: scroll"],
     [style*="overflow-y:scroll"],
-    [style*="overflow: scroll"],
-    [style*="overflow:scroll"],
-    [style*="overflow-x: hidden"][style*="overflow-y:"],
-    [style*="overflow-x:hidden"][style*="overflow-y:"],
-    [id^="pwa-scrollable"],
-    #pwa-scrollable-profile,
-    #pwa-scrollable-history,
-    #pwa-scrollable-home {
-      overflow-y: auto !important;
+    [style*="overflow-y: auto"],
+    [style*="overflow-y:auto"],
+    [id^="pwa-scrollable"] {
       -webkit-overflow-scrolling: touch !important;
-      overscroll-behavior: contain !important;
-      touch-action: pan-y !important; /* Permet le défilement vertical */
-    }
-
-    /* Force la barre d'onglets tout en bas en mode PWA sur iPhone */
-    @media all and (display-mode: standalone) {
-      /* Cible la TabBar de React Navigation */
-      div[role="tablist"], 
-      div[style*="position: fixed"][style*="bottom: 0"],
-      div[style*="position:absolute"][style*="bottom:0"] {
-        bottom: 0 !important;
-        /* Ajoute l'espace pour la barre iPhone mais SANS créer de vide en dessous */
-        padding-bottom: env(safe-area-inset-bottom) !important;
-        background-color: #ffffff !important; /* Force le fond blanc de la barre */
-        border-top: 1px solid rgba(0,0,0,0.05) !important;
-      }
+      overscroll-behavior-y: contain !important;
+      touch-action: pan-y !important;
     }
   </style>
 <meta name="theme-color" content="#2596be">
@@ -96,15 +78,30 @@
       });
     }
 
-    // Bloquer le scroll du body pour empêcher l'apparition
-    // de la barre Safari lors des interactions tactiles
+    /*
+     * BLOQUER LE SCROLL PARASITE SUR IPHONE
+     * On bloque uniquement les touchmove qui viennent du body ou html directement.
+     * Si le touchmove vient d'un élément scrollable (ScrollView), on le laisse passer.
+     */
     document.addEventListener('touchmove', function (e) {
-      if (e.target === document.body || e.target === document.documentElement) {
-        e.preventDefault();
+      // Chercher si un ancêtre est un élément scrollable
+      let target = e.target;
+      while (target && target !== document.body) {
+        const style = window.getComputedStyle(target);
+        const overflowY = style.getPropertyValue('overflow-y');
+        const overflowX = style.getPropertyValue('overflow-x');
+        if (overflowY === 'scroll' || overflowY === 'auto' ||
+            overflowX === 'scroll' || overflowX === 'auto') {
+          // C'est un élément scrollable → on laisse le geste passer
+          return;
+        }
+        target = target.parentElement;
       }
+      // Pas d'élément scrollable trouvé → on bloque
+      e.preventDefault();
     }, { passive: false });
 
-    // Empêcher le "double-tap to zoom" de Safari qui déclenche le chrome
+    // Empêcher le "double-tap to zoom" de Safari
     let lastTouchEnd = 0;
     document.addEventListener('touchend', function (e) {
       const now = Date.now();
@@ -114,7 +111,7 @@
       lastTouchEnd = now;
     }, false);
   </script>
-<script src="/app-mobile/_expo/static/js/web/index-efbe975f1ff16756408f8511c06b36c8.js" defer></script>
+<script src="/app-mobile/_expo/static/js/web/index-11217af5a999366a32894e3411f65664.js" defer></script>
 </body>
 
 </html>
