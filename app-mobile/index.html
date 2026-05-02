@@ -20,28 +20,32 @@
   <link rel="icon" href="/app-mobile/favicon.ico" />
 
   <style id="expo-reset">
-    /* Fond bleu pendant le chargement (splash screen) */
-    html {
-      height: -webkit-fill-available;
-      overflow: hidden;
-      background-color: #2596be;
-    }
-
-    body {
+    /*
+     * FOND BLANC partout — le splash screen bleu est géré par le COMPOSANT React
+     * (SplashScreen.js a son propre backgroundColor: #2596be)
+     * Plus besoin de mettre le bleu ici, ça causait des bandes bleues visibles.
+     */
+    html, body {
       height: 100%;
-      min-height: -webkit-fill-available;
-      overflow: hidden;
-      position: fixed;
       width: 100%;
       margin: 0;
       padding: 0;
-      background-color: #2596be;
-      /* NE PAS mettre touch-action: none ici — ça bloque tout le scroll */
+      background-color: #ffffff;
+      overflow: hidden;
+      position: fixed;
+    }
+
+    html {
+      height: -webkit-fill-available;
+    }
+
+    body {
+      min-height: -webkit-fill-available;
     }
 
     #root {
       height: 100%;
-      overflow: hidden;
+      width: 100%;
       display: flex;
       flex: 1;
       background-color: #ffffff;
@@ -49,8 +53,8 @@
 
     /*
      * SCROLL SUR IPHONE PWA
-     * React Native Web génère des divs avec overflow-y: scroll ou auto.
-     * On s'assure que ces divs peuvent recevoir les gestes tactiles.
+     * Libère le scroll pour tous les éléments scrollables générés par React Native Web.
+     * Sans cela, touch-action: none bloque tout sur iOS Safari PWA.
      */
     [style*="overflow-y: scroll"],
     [style*="overflow-y:scroll"],
@@ -73,45 +77,40 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/app-mobile/sw.js')
-          .then(reg => console.log('Service Worker enregistré', reg.scope))
-          .catch(err => console.log('Erreur Service Worker', err));
+          .then(reg => console.log('SW enregistré', reg.scope))
+          .catch(err => console.log('SW erreur', err));
       });
     }
 
     /*
-     * BLOQUER LE SCROLL PARASITE SUR IPHONE
-     * On bloque uniquement les touchmove qui viennent du body ou html directement.
-     * Si le touchmove vient d'un élément scrollable (ScrollView), on le laisse passer.
+     * BLOQUER LE SCROLL PARASITE SUR IPHONE (sans bloquer les ScrollView)
+     * On remonte l'arbre DOM depuis la cible du toucher.
+     * Si on trouve un élément scrollable, on laisse passer le geste.
+     * Sinon on bloque (empêche la barre Safari d'apparaître).
      */
     document.addEventListener('touchmove', function (e) {
-      // Chercher si un ancêtre est un élément scrollable
-      let target = e.target;
-      while (target && target !== document.body) {
-        const style = window.getComputedStyle(target);
-        const overflowY = style.getPropertyValue('overflow-y');
-        const overflowX = style.getPropertyValue('overflow-x');
-        if (overflowY === 'scroll' || overflowY === 'auto' ||
-            overflowX === 'scroll' || overflowX === 'auto') {
-          // C'est un élément scrollable → on laisse le geste passer
-          return;
+      let el = e.target;
+      while (el && el !== document.body) {
+        const style = window.getComputedStyle(el);
+        const oy = style.overflowY;
+        const ox = style.overflowX;
+        if (oy === 'scroll' || oy === 'auto' || ox === 'scroll' || ox === 'auto') {
+          return; // Élément scrollable trouvé → laisser passer
         }
-        target = target.parentElement;
+        el = el.parentElement;
       }
-      // Pas d'élément scrollable trouvé → on bloque
-      e.preventDefault();
+      e.preventDefault(); // Aucun ancêtre scrollable → bloquer
     }, { passive: false });
 
-    // Empêcher le "double-tap to zoom" de Safari
-    let lastTouchEnd = 0;
+    // Bloquer double-tap zoom Safari
+    let lastTouch = 0;
     document.addEventListener('touchend', function (e) {
       const now = Date.now();
-      if (now - lastTouchEnd <= 300) {
-        e.preventDefault();
-      }
-      lastTouchEnd = now;
+      if (now - lastTouch <= 300) e.preventDefault();
+      lastTouch = now;
     }, false);
   </script>
-<script src="/app-mobile/_expo/static/js/web/index-11217af5a999366a32894e3411f65664.js" defer></script>
+<script src="/app-mobile/_expo/static/js/web/index-9c9033dca4e515b956bfe61581227f9c.js" defer></script>
 </body>
 
 </html>
