@@ -21,16 +21,17 @@
 
   <style id="expo-reset">
     /*
-     * FOND BLANC partout — le splash screen bleu est géré par le COMPOSANT React
-     * (SplashScreen.js a son propre backgroundColor: #2596be)
-     * Plus besoin de mettre le bleu ici, ça causait des bandes bleues visibles.
+     * FOND BLEU sur html/body = couleur du splash screen.
+     * Le composant SplashScreen.js est bleu, donc pas de bande visible.
+     * Les écrans de l'app (blancs) couvrent ce fond après le splash.
+     * La tab bar couvre le bas avec son propre fond blanc.
      */
     html, body {
       height: 100%;
       width: 100%;
       margin: 0;
       padding: 0;
-      background-color: #ffffff;
+      background-color: #2596be;
       overflow: hidden;
       position: fixed;
     }
@@ -64,6 +65,19 @@
       -webkit-overflow-scrolling: touch !important;
       overscroll-behavior-y: contain !important;
       touch-action: pan-y !important;
+    }
+
+    /*
+     * NAVBAR BAS — iPhone PWA
+     * env(safe-area-inset-bottom) est disponible uniquement dans le navigateur.
+     * On l'applique ici car le JS (useSafeAreaInsets) retourne 0 en PWA.
+     * On cible uniquement le mode standalone (PWA installée sur écran d'accueil).
+     */
+    @media all and (display-mode: standalone) {
+      div[role="tablist"] {
+        padding-bottom: env(safe-area-inset-bottom) !important;
+        height: calc(65px + env(safe-area-inset-bottom)) !important;
+      }
     }
   </style>
 <meta name="theme-color" content="#2596be">
@@ -110,7 +124,7 @@
       lastTouch = now;
     }, false);
   </script>
-<script src="/app-mobile/_expo/static/js/web/index-9c9033dca4e515b956bfe61581227f9c.js" defer></script>
+<script src="/app-mobile/_expo/static/js/web/index-26a37168291d9bafb0b189ecb02e75fe.js" defer></script>
 </body>
 
 </html>
