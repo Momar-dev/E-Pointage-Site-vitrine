@@ -1,95 +1,114 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
-    <title>E-Pointage</title>
 
-    <!-- iOS PWA tags -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-touch-fullscreen" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="E-Pointage" />
-    <link rel="apple-touch-icon" href="/app-mobile/pwa-icon.png" />
-    <link rel="manifest" href="/app-mobile/manifest.json" />
-    
-    <meta name="theme-color" content="#ffffff">
-    <link rel="icon" href="/app-mobile/favicon.ico" />
+<head>
+  <meta charset="utf-8" />
+  <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+  <title>E-Pointage</title>
 
-    <!-- The `react-native-web` recommended style reset -->
-    <style id="expo-reset">
-      /* iOS PWA - méthode standard pour bloquer le scroll du body */
-      html {
-        height: -webkit-fill-available;
-        overflow: hidden;
-      }
-      body {
-        height: 100%;
-        min-height: -webkit-fill-available;
-        overflow: hidden;
-        position: fixed;   /* La clé : empêche le scroll global sur iOS */
-        width: 100%;
-        margin: 0;
-        background-color: #ffffff; /* FOND BLANC pour que les bandes soient invisibles */
-        touch-action: none; /* Bloque les gestes parasites */
-      }
-      #root {
-        height: 100%;
-        overflow: hidden;
-        display: flex;
-        flex: 1;
-      }
-      /* Autoriser le scroll UNIQUEMENT dans les ScrollView de React Native Web */
-      [style*="overflow-y: auto"],
-      [style*="overflow-y:auto"],
-      [style*="overflow-y: scroll"],
-      [style*="overflow-y:scroll"],
-      [style*="overflow: scroll"],
-      [style*="overflow:scroll"],
-      [style*="overflow-x: hidden"][style*="overflow-y:"],
-      [style*="overflow-x:hidden"][style*="overflow-y:"],
-      [id^="pwa-scrollable"] {
-        overflow-y: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        overscroll-behavior: contain;
-        touch-action: pan-y !important;
-      }
-    </style>
+  <!-- iOS PWA tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-touch-fullscreen" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="E-Pointage" />
+  <link rel="apple-touch-icon" href="/app-mobile/pwa-icon.png" />
+  <link rel="manifest" href="/app-mobile/manifest.json" />
+
   <meta name="theme-color" content="#2596be">
-<link rel="icon" href="/app-mobile/favicon.ico" /></head>
-  <body>
-    <noscript>Vous devez activer le JavaScript pour faire fonctionner cette application.</noscript>
-    <div id="root"></div>
-    <script>
-      // Service Worker pour le mode hors-ligne
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/app-mobile/sw.js')
-            .then(reg => console.log('Service Worker enregistré', reg.scope))
-            .catch(err => console.log('Erreur Service Worker', err));
-        });
+  <link rel="icon" href="/app-mobile/favicon.ico" />
+
+  <!-- The `react-native-web` recommended style reset -->
+  <style id="expo-reset">
+    /* iOS PWA - méthode standard pour bloquer le scroll du body */
+    html {
+      height: -webkit-fill-available;
+      overflow: hidden;
+      background-color: #2596be;
+    }
+
+    body {
+      height: 100%;
+      min-height: -webkit-fill-available;
+      overflow: hidden;
+      position: fixed;
+      /* La clé : empêche le scroll global sur iOS */
+      width: 100%;
+      margin: 0;
+      background-color: #2596be;
+      /* BLEU au démarrage pour le SplashScreen */
+      touch-action: none;
+      /* Bloque les gestes parasites */
+    }
+
+    #root {
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex: 1;
+    }
+
+    /* Autoriser le scroll UNIQUEMENT dans les ScrollView de React Native Web */
+    [style*="overflow-y: auto"],
+    [style*="overflow-y:auto"],
+    [style*="overflow-y: scroll"],
+    [style*="overflow-y:scroll"],
+    [style*="overflow: scroll"],
+    [style*="overflow:scroll"],
+    [style*="overflow-x: hidden"][style*="overflow-y:"],
+    [style*="overflow-x:hidden"][style*="overflow-y:"],
+    [id^="pwa-scrollable"] {
+      overflow-y: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      overscroll-behavior: contain;
+      touch-action: pan-y !important;
+    }
+
+    /* Force la barre d'onglets tout en bas en mode PWA */
+    @media all and (display-mode: standalone) {
+      div[style*="position: fixed"][style*="bottom: 0"] {
+        bottom: 0 !important;
+        padding-bottom: env(safe-area-inset-bottom) !important;
+        height: calc(65px + env(safe-area-inset-bottom)) !important;
       }
+    }
+  </style>
+<meta name="theme-color" content="#2596be">
+<link rel="icon" href="/app-mobile/favicon.ico" /></head>
 
-      // Bloquer le scroll du body pour empêcher l'apparition
-      // de la barre Safari lors des interactions tactiles
-      document.addEventListener('touchmove', function(e) {
-        if (e.target === document.body || e.target === document.documentElement) {
-          e.preventDefault();
-        }
-      }, { passive: false });
+<body>
+  <noscript>Vous devez activer le JavaScript pour faire fonctionner cette application.</noscript>
+  <div id="root"></div>
+  <script>
+    // Service Worker pour le mode hors-ligne
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/app-mobile/sw.js')
+          .then(reg => console.log('Service Worker enregistré', reg.scope))
+          .catch(err => console.log('Erreur Service Worker', err));
+      });
+    }
 
-      // Empêcher le "double-tap to zoom" de Safari qui déclenche le chrome
-      let lastTouchEnd = 0;
-      document.addEventListener('touchend', function(e) {
-        const now = Date.now();
-        if (now - lastTouchEnd <= 300) {
-          e.preventDefault();
-        }
-        lastTouchEnd = now;
-      }, false);
-    </script>
-  <script src="/app-mobile/_expo/static/js/web/index-5b3c0a97ad4a8e154afbc1a8c1df4ec2.js" defer></script>
+    // Bloquer le scroll du body pour empêcher l'apparition
+    // de la barre Safari lors des interactions tactiles
+    document.addEventListener('touchmove', function (e) {
+      if (e.target === document.body || e.target === document.documentElement) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    // Empêcher le "double-tap to zoom" de Safari qui déclenche le chrome
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function (e) {
+      const now = Date.now();
+      if (now - lastTouchEnd <= 300) {
+        e.preventDefault();
+      }
+      lastTouchEnd = now;
+    }, false);
+  </script>
+<script src="/app-mobile/_expo/static/js/web/index-f0bd8d2d2e734fd3add779cba558db4a.js" defer></script>
 </body>
+
 </html>
