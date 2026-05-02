@@ -25,7 +25,7 @@
     html {
       height: -webkit-fill-available;
       overflow: hidden;
-      background-color: #2596be;
+      background-color: #2596be; /* Retour au BLEU pour le Splash */
     }
 
     body {
@@ -33,13 +33,10 @@
       min-height: -webkit-fill-available;
       overflow: hidden;
       position: fixed;
-      /* La clé : empêche le scroll global sur iOS */
       width: 100%;
       margin: 0;
-      background-color: #2596be;
-      /* BLEU au démarrage pour le SplashScreen */
+      background-color: #2596be; /* Retour au BLEU pour le Splash */
       touch-action: none;
-      /* Bloque les gestes parasites */
     }
 
     #root {
@@ -47,6 +44,7 @@
       overflow: hidden;
       display: flex;
       flex: 1;
+      background-color: #ffffff; /* BLANC ici pour l'application */
     }
 
     /* Autoriser le scroll UNIQUEMENT dans les ScrollView de React Native Web */
@@ -58,19 +56,27 @@
     [style*="overflow:scroll"],
     [style*="overflow-x: hidden"][style*="overflow-y:"],
     [style*="overflow-x:hidden"][style*="overflow-y:"],
-    [id^="pwa-scrollable"] {
+    [id^="pwa-scrollable"],
+    #pwa-scrollable-profile,
+    #pwa-scrollable-history,
+    #pwa-scrollable-home {
       overflow-y: auto !important;
       -webkit-overflow-scrolling: touch !important;
-      overscroll-behavior: contain;
-      touch-action: pan-y !important;
+      overscroll-behavior: contain !important;
+      touch-action: pan-y !important; /* Permet le défilement vertical */
     }
 
-    /* Force la barre d'onglets tout en bas en mode PWA */
+    /* Force la barre d'onglets tout en bas en mode PWA sur iPhone */
     @media all and (display-mode: standalone) {
-      div[style*="position: fixed"][style*="bottom: 0"] {
+      /* Cible la TabBar de React Navigation */
+      div[role="tablist"], 
+      div[style*="position: fixed"][style*="bottom: 0"],
+      div[style*="position:absolute"][style*="bottom:0"] {
         bottom: 0 !important;
+        /* Ajoute l'espace pour la barre iPhone mais SANS créer de vide en dessous */
         padding-bottom: env(safe-area-inset-bottom) !important;
-        height: calc(65px + env(safe-area-inset-bottom)) !important;
+        background-color: #ffffff !important; /* Force le fond blanc de la barre */
+        border-top: 1px solid rgba(0,0,0,0.05) !important;
       }
     }
   </style>
@@ -108,7 +114,7 @@
       lastTouchEnd = now;
     }, false);
   </script>
-<script src="/app-mobile/_expo/static/js/web/index-f0bd8d2d2e734fd3add779cba558db4a.js" defer></script>
+<script src="/app-mobile/_expo/static/js/web/index-efbe975f1ff16756408f8511c06b36c8.js" defer></script>
 </body>
 
 </html>
