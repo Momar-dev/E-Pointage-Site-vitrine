@@ -20,48 +20,28 @@
   <link rel="icon" href="/app-mobile/favicon.ico" />
 
   <style id="expo-reset">
-    /*
-     * FOND BLEU sur html/body = couleur du splash screen.
-     * Le composant SplashScreen.js est bleu, donc pas de bande visible.
-     * Les écrans de l'app (blancs) couvrent ce fond après le splash.
-     * La tab bar couvre le bas avec son propre fond blanc.
-     */
-    html, body {
-      height: 100%;
+    /* FOND BLANC PAR DEFAUT POUR EVITER TOUTE BANDE BLEUE NON DESIREE */
+    html, body, #root {
       width: 100%;
+      height: 100%;
       margin: 0;
       padding: 0;
-      background-color: #2596be;
-      overflow: hidden;
-      position: fixed;
-    }
-
-    html {
-      height: -webkit-fill-available;
-    }
-
-    body {
-      min-height: -webkit-fill-available;
+      background-color: #ffffff;
     }
 
     #root {
-      /* position: fixed avec top/bottom couvre TOUT l'écran iPhone
-         y compris la zone home indicator et la zone notch */
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ffffff;
-      overflow: hidden;
       display: flex;
+      flex: 1;
     }
 
-    /*
-     * SCROLL SUR IPHONE PWA
-     * Libère le scroll pour tous les éléments scrollables générés par React Native Web.
-     * Sans cela, touch-action: none bloque tout sur iOS Safari PWA.
-     */
+    /* Evite les débordements sur iOS Safari */
+    @supports (-webkit-touch-callout: none) {
+      html, body, #root {
+        height: -webkit-fill-available;
+      }
+    }
+
+    /* SCROLL SUR IPHONE PWA */
     [style*="overflow-y: scroll"],
     [style*="overflow-y:scroll"],
     [style*="overflow-y: auto"],
@@ -72,23 +52,11 @@
       touch-action: pan-y !important;
     }
 
-    /*
-     * ZONE HOME INDICATOR — iPhone PWA
-     * La navbar (position:fixed; bottom:0) s'arrête au-dessus de la zone home indicator.
-     * body::after crée un calque blanc invisible qui couvre cette zone,
-     * sans toucher à la navbar ni à ses labels.
-     */
+    /* NAVBAR IPHONE PWA - Ajoute l'espace du home indicator proprement */
     @media all and (display-mode: standalone) {
-      body::after {
-        content: '';
-        display: block;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: env(safe-area-inset-bottom);
-        background-color: #ffffff;
-        z-index: 99;
+      div[role="tablist"] {
+        padding-bottom: calc(15px + env(safe-area-inset-bottom)) !important;
+        height: calc(70px + env(safe-area-inset-bottom)) !important;
       }
     }
   </style>
@@ -136,7 +104,7 @@
       lastTouch = now;
     }, false);
   </script>
-<script src="/app-mobile/_expo/static/js/web/index-26a37168291d9bafb0b189ecb02e75fe.js" defer></script>
+<script src="/app-mobile/_expo/static/js/web/index-dbc8b105b8fc52246eadfebf0d4c117d.js" defer></script>
 </body>
 
 </html>
