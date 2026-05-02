@@ -45,11 +45,16 @@
     }
 
     #root {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      flex: 1;
+      /* position: fixed avec top/bottom couvre TOUT l'écran iPhone
+         y compris la zone home indicator et la zone notch */
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background-color: #ffffff;
+      overflow: hidden;
+      display: flex;
     }
 
     /*
@@ -68,15 +73,22 @@
     }
 
     /*
-     * NAVBAR BAS — iPhone PWA
-     * env(safe-area-inset-bottom) est disponible uniquement dans le navigateur.
-     * On l'applique ici car le JS (useSafeAreaInsets) retourne 0 en PWA.
-     * On cible uniquement le mode standalone (PWA installée sur écran d'accueil).
+     * ZONE HOME INDICATOR — iPhone PWA
+     * La navbar (position:fixed; bottom:0) s'arrête au-dessus de la zone home indicator.
+     * body::after crée un calque blanc invisible qui couvre cette zone,
+     * sans toucher à la navbar ni à ses labels.
      */
     @media all and (display-mode: standalone) {
-      div[role="tablist"] {
-        padding-bottom: env(safe-area-inset-bottom) !important;
-        height: calc(65px + env(safe-area-inset-bottom)) !important;
+      body::after {
+        content: '';
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: env(safe-area-inset-bottom);
+        background-color: #ffffff;
+        z-index: 99;
       }
     }
   </style>
