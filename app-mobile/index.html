@@ -20,35 +20,37 @@
   <link rel="icon" href="/app-mobile/favicon.ico" />
 
   <style id="expo-reset">
-    /* FOND BLEU PAR DÉFAUT POUR ÉVITER TOUTE BANDE BLANCHE AU LANCEMENT */
+    /* Fond neutre par défaut pour éviter l’overscroll bleu sur les écrans blancs */
     html, body, #root {
       width: 100%;
       min-height: 100%;
       min-height: -webkit-fill-available;
       margin: 0;
       padding: 0;
-      background-color: #2596be;
-      color: #ffffff;
+      background-color: #f8fafc;
+      color: #0f172a;
+      overflow-x: hidden;
     }
 
     body {
       min-height: calc(100vh + env(safe-area-inset-bottom, 0px));
       padding-bottom: env(safe-area-inset-bottom, 0px);
-      background-color: #2596be;
+      background-color: #f8fafc;
+      overscroll-behavior-y: contain;
     }
 
     #root {
       display: flex;
       flex: 1;
       min-height: calc(100vh + env(safe-area-inset-bottom, 0px));
-      background-color: #2596be;
+      background-color: #f8fafc;
     }
 
     /* Evite les débordements sur iOS Safari */
     @supports (-webkit-touch-callout: none) {
       html, body, #root {
         height: -webkit-fill-available;
-        background-color: #2596be;
+        background-color: #f8fafc;
       }
     }
 
@@ -72,13 +74,13 @@
         right: 0 !important;
         z-index: 9999 !important;
         margin: 0 !important;
-        padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px)) !important;
-        min-height: calc(70px + env(safe-area-inset-bottom, 0px)) !important;
+        padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important;
+        min-height: calc(78px + env(safe-area-inset-bottom, 0px)) !important;
         box-sizing: border-box !important;
         background-color: #ffffff !important;
       }
       div[role="tablist"] > * {
-        min-height: 70px !important;
+        min-height: 78px !important;
       }
     }
   </style>
@@ -126,7 +128,7 @@
       lastTouch = now;
     }, false);
   </script>
-<script src="/app-mobile/_expo/static/js/web/index-b3aa8df2b182fd5d144b19d02e35b7f9.js" defer></script>
+<script src="/app-mobile/_expo/static/js/web/index-3257c1612a36f4f037d60ae8d4b09243.js" defer></script>
 </body>
 
 </html>
