@@ -20,7 +20,6 @@
   <link rel="icon" href="/app-mobile/favicon.ico" />
 
   <style id="expo-reset">
-    /* Fond neutre par défaut pour éviter l’overscroll bleu sur les écrans blancs */
     html, body, #root {
       width: 100%;
       min-height: 100%;
@@ -46,7 +45,6 @@
       background-color: #ffffff;
     }
 
-    /* Evite les débordements sur iOS Safari */
     @supports (-webkit-touch-callout: none) {
       html, body, #root {
         height: -webkit-fill-available;
@@ -65,7 +63,7 @@
       touch-action: pan-y !important;
     }
 
-    /* NAVBAR IPHONE PWA - Ajoute l'espace du home indicator proprement */
+    /* NAVBAR IPHONE PWA */
     @media all and (display-mode: standalone), (display-mode: fullscreen) {
       html, body, #root {
         overflow: hidden !important;
@@ -94,15 +92,12 @@
       }
     }
   </style>
-<meta name="theme-color" content="#2596be">
-<link rel="icon" href="/app-mobile/favicon.ico" /><meta name="theme-color" content="#f8fafc">
-<link rel="icon" href="/app-mobile/favicon.ico" /></head>
+</head>
 
 <body>
   <noscript>Vous devez activer le JavaScript pour faire fonctionner cette application.</noscript>
   <div id="root"></div>
   <script>
-    // Service Worker pour le mode hors-ligne
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/app-mobile/sw.js')
@@ -111,12 +106,6 @@
       });
     }
 
-    /*
-     * BLOQUER LE SCROLL PARASITE SUR IPHONE (sans bloquer les ScrollView)
-     * On remonte l'arbre DOM depuis la cible du toucher.
-     * Si on trouve un élément scrollable, on laisse passer le geste.
-     * Sinon on bloque (empêche la barre Safari d'apparaître).
-     */
     document.addEventListener('touchmove', function (e) {
       let el = e.target;
       while (el && el !== document.body) {
@@ -124,14 +113,13 @@
         const oy = style.overflowY;
         const ox = style.overflowX;
         if (oy === 'scroll' || oy === 'auto' || ox === 'scroll' || ox === 'auto') {
-          return; // Élément scrollable trouvé → laisser passer
+          return;
         }
         el = el.parentElement;
       }
-      e.preventDefault(); // Aucun ancêtre scrollable → bloquer
+      e.preventDefault();
     }, { passive: false });
 
-    // Bloquer double-tap zoom Safari
     let lastTouch = 0;
     document.addEventListener('touchend', function (e) {
       const now = Date.now();
@@ -139,9 +127,8 @@
       lastTouch = now;
     }, false);
   </script>
-<script src="/app-mobile/_expo/static/js/web/index-a0ca666b18a64e273794cebc44b470c4.js" defer></script>
-<script src="/app-mobile/_expo/static/js/web/index-77b66ba4732c1723ec12fa30a95eefa0.js" defer></script>
+  <script src="/app-mobile/_expo/static/js/web/index-571c1475d7663859942ffa8129984591.js" defer></script>
 </body>
 
 </html>
-<!-- Last build: 2026-05-03 11:27 -->
+<!-- Last build: 2026-05-08 22:29 -->
