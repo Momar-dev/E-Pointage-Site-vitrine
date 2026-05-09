@@ -18,4 +18,4 @@ Thumbs.db
 # Environment
 .env
 .env.local
-*.apk
+# *.apk (autorisé pour le site vitrine)
