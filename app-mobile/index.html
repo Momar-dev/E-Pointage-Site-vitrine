@@ -15,10 +15,12 @@
   <meta name="apple-mobile-web-app-title" content="E-Pointage" />
   <link rel="apple-touch-icon" href="/app-mobile/pwa-icon.png" />
   <link rel="manifest" href="/app-mobile/manifest.json" />
+
   <meta name="theme-color" content="#2596be">
   <link rel="icon" href="/app-mobile/favicon.ico" />
 
   <style id="expo-reset">
+    /* Fond neutre par défaut pour éviter l’overscroll bleu sur les écrans blancs */
     html, body, #root {
       width: 100%;
       min-height: 100%;
@@ -29,24 +31,29 @@
       color: #0f172a;
       overflow-x: hidden;
     }
+
     body {
       min-height: calc(100vh + env(safe-area-inset-bottom, 0px));
       padding-bottom: env(safe-area-inset-bottom, 0px);
       background-color: #ffffff;
       overscroll-behavior-y: contain;
     }
+
     #root {
       display: flex;
       flex: 1;
       min-height: calc(100vh + env(safe-area-inset-bottom, 0px));
       background-color: #ffffff;
     }
+
+    /* Evite les débordements sur iOS Safari */
     @supports (-webkit-touch-callout: none) {
       html, body, #root {
         height: -webkit-fill-available;
         background-color: #ffffff;
       }
     }
+
     /* SCROLL SUR IPHONE PWA */
     [style*="overflow-y: scroll"],
     [style*="overflow-y:scroll"],
@@ -57,13 +64,15 @@
       overscroll-behavior-y: contain !important;
       touch-action: pan-y !important;
     }
-    /* NAVBAR IPHONE PWA */
+
+    /* NAVBAR IPHONE PWA - Ajoute l'espace du home indicator proprement */
     @media all and (display-mode: standalone), (display-mode: fullscreen) {
       html, body, #root {
         overflow: hidden !important;
         height: 100%;
         height: -webkit-fill-available;
       }
+
       div[role="tablist"] {
         position: fixed !important;
         bottom: 0 !important;
@@ -91,6 +100,7 @@
   <noscript>Vous devez activer le JavaScript pour faire fonctionner cette application.</noscript>
   <div id="root"></div>
   <script>
+    // Service Worker pour le mode hors-ligne
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/app-mobile/sw.js')
@@ -98,6 +108,13 @@
           .catch(err => console.log('SW erreur', err));
       });
     }
+
+    /*
+     * BLOQUER LE SCROLL PARASITE SUR IPHONE (sans bloquer les ScrollView)
+     * On remonte l'arbre DOM depuis la cible du toucher.
+     * Si on trouve un élément scrollable, on laisse passer le geste.
+     * Sinon on bloque (empêche la barre Safari d'apparaître).
+     */
     document.addEventListener('touchmove', function (e) {
       let el = e.target;
       while (el && el !== document.body) {
@@ -105,12 +122,14 @@
         const oy = style.overflowY;
         const ox = style.overflowX;
         if (oy === 'scroll' || oy === 'auto' || ox === 'scroll' || ox === 'auto') {
-          return;
+          return; // Élément scrollable trouvé → laisser passer
         }
         el = el.parentElement;
       }
-      e.preventDefault();
+      e.preventDefault(); // Aucun ancêtre scrollable → bloquer
     }, { passive: false });
+
+    // Bloquer double-tap zoom Safari
     let lastTouch = 0;
     document.addEventListener('touchend', function (e) {
       const now = Date.now();
@@ -118,8 +137,8 @@
       lastTouch = now;
     }, false);
   </script>
-  <script src="/app-mobile/_expo/static/js/web/index-0349bc23e2fa43492d820780b289f4cc.js" defer></script>
+  <script src="/app-mobile/_expo/static/js/web/index-6fd881da03da1b31b21dcd3f4053c871.js" defer></script>
 </body>
 
 </html>
-<!-- Last build: 2026-05-09 09:14 -->
+<!-- Last build: 2026-05-09 09:18 -->
