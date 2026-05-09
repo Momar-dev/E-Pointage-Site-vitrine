@@ -10,7 +10,6 @@
     }
   ],
   "start_url": "/app-mobile/",
-  "scope": "/app-mobile/",
   "background_color": "#2596be",
   "display": "standalone",
   "theme_color": "#2596be",
