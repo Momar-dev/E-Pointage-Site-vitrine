@@ -15,7 +15,6 @@
   <meta name="apple-mobile-web-app-title" content="E-Pointage" />
   <link rel="apple-touch-icon" href="/app-mobile/pwa-icon.png" />
   <link rel="manifest" href="/app-mobile/manifest.json" />
-
   <meta name="theme-color" content="#2596be">
   <link rel="icon" href="/app-mobile/favicon.ico" />
 
@@ -30,28 +29,24 @@
       color: #0f172a;
       overflow-x: hidden;
     }
-
     body {
       min-height: calc(100vh + env(safe-area-inset-bottom, 0px));
       padding-bottom: env(safe-area-inset-bottom, 0px);
       background-color: #ffffff;
       overscroll-behavior-y: contain;
     }
-
     #root {
       display: flex;
       flex: 1;
       min-height: calc(100vh + env(safe-area-inset-bottom, 0px));
       background-color: #ffffff;
     }
-
     @supports (-webkit-touch-callout: none) {
       html, body, #root {
         height: -webkit-fill-available;
         background-color: #ffffff;
       }
     }
-
     /* SCROLL SUR IPHONE PWA */
     [style*="overflow-y: scroll"],
     [style*="overflow-y:scroll"],
@@ -62,7 +57,6 @@
       overscroll-behavior-y: contain !important;
       touch-action: pan-y !important;
     }
-
     /* NAVBAR IPHONE PWA */
     @media all and (display-mode: standalone), (display-mode: fullscreen) {
       html, body, #root {
@@ -70,7 +64,6 @@
         height: 100%;
         height: -webkit-fill-available;
       }
-
       div[role="tablist"] {
         position: fixed !important;
         bottom: 0 !important;
@@ -105,7 +98,6 @@
           .catch(err => console.log('SW erreur', err));
       });
     }
-
     document.addEventListener('touchmove', function (e) {
       let el = e.target;
       while (el && el !== document.body) {
@@ -119,7 +111,6 @@
       }
       e.preventDefault();
     }, { passive: false });
-
     let lastTouch = 0;
     document.addEventListener('touchend', function (e) {
       const now = Date.now();
@@ -127,8 +118,8 @@
       lastTouch = now;
     }, false);
   </script>
-  <script src="/app-mobile/_expo/static/js/web/index-571c1475d7663859942ffa8129984591.js" defer></script>
+  <script src="/app-mobile/_expo/static/js/web/index-0349bc23e2fa43492d820780b289f4cc.js" defer></script>
 </body>
 
 </html>
-<!-- Last build: 2026-05-08 22:29 -->
+<!-- Last build: 2026-05-09 09:14 -->
